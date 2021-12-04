@@ -25,6 +25,17 @@ class ViewController: UIViewController {
         let product2 = Product(pName:"Cream Fantasy(50g)",pImage:"image1",pPrice:"Rs. 60")
         productList.append(product2)
     }
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 }
 
