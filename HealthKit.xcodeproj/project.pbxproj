@@ -17,6 +17,7 @@
 		848F5AC12757FCE200C17962 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848F5AC02757FCE200C17962 /* HealthKit.framework */; };
 		848F5AC42758C05D00C17962 /* ViewProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F5AC32758C05D00C17962 /* ViewProductTableViewCell.swift */; };
 		848F5AC7275A42CA00C17962 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F5AC6275A42CA00C17962 /* Product.swift */; };
+		848F5ACE275E7A0800C17962 /* Product Details ControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F5ACD275E7A0800C17962 /* Product Details ControllerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		848F5AC02757FCE200C17962 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		848F5AC32758C05D00C17962 /* ViewProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProductTableViewCell.swift; sourceTree = "<group>"; };
 		848F5AC6275A42CA00C17962 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		848F5ACD275E7A0800C17962 /* Product Details ControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product Details ControllerViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				848F5AB42757764500C17962 /* LaunchScreen.storyboard */,
 				848F5AB72757764500C17962 /* Info.plist */,
 				848F5AAF2757763600C17962 /* HealthKit.xcdatamodeld */,
+				848F5ACD275E7A0800C17962 /* Product Details ControllerViewController.swift */,
 			);
 			path = HealthKit;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			files = (
 				848F5AB12757763600C17962 /* HealthKit.xcdatamodeld in Sources */,
 				848F5AAB2757763600C17962 /* ViewController.swift in Sources */,
+				848F5ACE275E7A0800C17962 /* Product Details ControllerViewController.swift in Sources */,
 				848F5AA72757763600C17962 /* AppDelegate.swift in Sources */,
 				848F5AC42758C05D00C17962 /* ViewProductTableViewCell.swift in Sources */,
 				848F5AA92757763600C17962 /* SceneDelegate.swift in Sources */,
