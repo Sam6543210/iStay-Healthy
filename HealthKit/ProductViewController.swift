@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ProductViewController: UIViewController {
     var productList = [Product]()
 
     @IBOutlet weak var tableView: UITableView!
@@ -19,10 +19,10 @@ class ViewController: UIViewController {
     }
     func fillData()
     {
-        let product1 = Product(pName:"Cream Fantasy (30 g)",pImage:"image1",pPrice:"Rs. 40")
+        let product1 = Product(pName:"Cream Fantasy (30 g)",pImage:"images2",pPrice:"Rs. 40")
         productList.append(product1)
         
-        let product2 = Product(pName:"Cream Fantasy(50g)",pImage:"image1",pPrice:"Rs. 60")
+        let product2 = Product(pName:"Cream Fantasy(50g)",pImage:"images2",pPrice:"Rs. 60")
         productList.append(product2)
         
         let product3 = Product(pName:"Cream Fantasy(50g)",pImage:"image1",pPrice:"Rs. 60")
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     }
     
 }
-extension ViewController: UITableViewDelegate,UITableViewDataSource
+extension ProductViewController: UITableViewDelegate,UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return productList.count

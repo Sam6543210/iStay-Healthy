@@ -11,7 +11,7 @@
         <!--Products-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HealthKit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ProductViewController" customModule="HealthKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,13 +28,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l0z-50-JdI">
-                                                    <rect key="frame" x="105" y="21" width="204" height="200"/>
+                                                    <rect key="frame" x="105" y="21" width="204" height="179"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="Hcy-i8-TJI"/>
                                                         <constraint firstAttribute="height" constant="200" id="Pq1-HT-xHM"/>
+                                                        <constraint firstAttribute="width" constant="500" id="Y0w-bU-Bwb"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwR-Ck-XX9">
-                                                    <rect key="frame" x="40" y="241" width="374" height="25"/>
+                                                    <rect key="frame" x="40" y="220" width="374" height="25"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="jcl-mi-1Nf"/>
                                                     </constraints>
@@ -43,17 +46,18 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="       Rs. 350" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7K-DK-3yA">
-                                                    <rect key="frame" x="15" y="276" width="384" height="25"/>
+                                                    <rect key="frame" x="15" y="255" width="384" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="5mu-I0-sj7"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                     <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
+                                                    <color key="highlightedColor" systemColor="labelColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="jwR-Ck-XX9" firstAttribute="top" secondItem="l0z-50-JdI" secondAttribute="bottom" constant="20" id="5XC-6s-dZW"/>
+                                                <constraint firstAttribute="bottom" secondItem="u7K-DK-3yA" secondAttribute="bottom" constant="20" id="7Kr-fC-mkt"/>
                                                 <constraint firstItem="u7K-DK-3yA" firstAttribute="leading" secondItem="8OY-Wc-fe0" secondAttribute="leading" constant="15" id="DhD-Ty-IcC"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="l0z-50-JdI" secondAttribute="trailing" constant="85" id="VSM-Yi-sNq"/>
                                                 <constraint firstItem="l0z-50-JdI" firstAttribute="leading" secondItem="8OY-Wc-fe0" secondAttribute="leadingMargin" constant="85" id="WFw-p6-Pe5"/>
@@ -161,6 +165,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

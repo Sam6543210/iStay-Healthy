@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		848F5AA72757763600C17962 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F5AA62757763600C17962 /* AppDelegate.swift */; };
 		848F5AA92757763600C17962 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F5AA82757763600C17962 /* SceneDelegate.swift */; };
-		848F5AAB2757763600C17962 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F5AAA2757763600C17962 /* ViewController.swift */; };
+		848F5AAB2757763600C17962 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F5AAA2757763600C17962 /* ProductViewController.swift */; };
 		848F5AAE2757763600C17962 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848F5AAC2757763600C17962 /* Main.storyboard */; };
 		848F5AB12757763600C17962 /* HealthKit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 848F5AAF2757763600C17962 /* HealthKit.xcdatamodeld */; };
 		848F5AB32757764500C17962 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848F5AB22757764500C17962 /* Assets.xcassets */; };
@@ -24,7 +24,7 @@
 		848F5AA32757763600C17962 /* HealthKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848F5AA62757763600C17962 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		848F5AA82757763600C17962 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		848F5AAA2757763600C17962 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		848F5AAA2757763600C17962 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		848F5AAD2757763600C17962 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		848F5AB02757763600C17962 /* HealthKit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HealthKit.xcdatamodel; sourceTree = "<group>"; };
 		848F5AB22757764500C17962 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 				848F5ABE2757FCE200C17962 /* HealthKit.entitlements */,
 				848F5AA62757763600C17962 /* AppDelegate.swift */,
 				848F5AA82757763600C17962 /* SceneDelegate.swift */,
-				848F5AAA2757763600C17962 /* ViewController.swift */,
+				848F5AAA2757763600C17962 /* ProductViewController.swift */,
 				848F5AC6275A42CA00C17962 /* Product.swift */,
 				848F5AAC2757763600C17962 /* Main.storyboard */,
 				848F5AC32758C05D00C17962 /* ViewProductTableViewCell.swift */,
@@ -164,7 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				848F5AB12757763600C17962 /* HealthKit.xcdatamodeld in Sources */,
-				848F5AAB2757763600C17962 /* ViewController.swift in Sources */,
+				848F5AAB2757763600C17962 /* ProductViewController.swift in Sources */,
 				848F5ACE275E7A0800C17962 /* Product Details ControllerViewController.swift in Sources */,
 				848F5AA72757763600C17962 /* AppDelegate.swift in Sources */,
 				848F5AC42758C05D00C17962 /* ViewProductTableViewCell.swift in Sources */,
