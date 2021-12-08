@@ -18,6 +18,7 @@
 		848F5AC42758C05D00C17962 /* ViewProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F5AC32758C05D00C17962 /* ViewProductTableViewCell.swift */; };
 		848F5AC7275A42CA00C17962 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F5AC6275A42CA00C17962 /* Product.swift */; };
 		848F5ACE275E7A0800C17962 /* Product Details ControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F5ACD275E7A0800C17962 /* Product Details ControllerViewController.swift */; };
+		848F5AD3276089FF00C17962 /* Product.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848F5AD2276089FF00C17962 /* Product.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		848F5AC32758C05D00C17962 /* ViewProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProductTableViewCell.swift; sourceTree = "<group>"; };
 		848F5AC6275A42CA00C17962 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		848F5ACD275E7A0800C17962 /* Product Details ControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product Details ControllerViewController.swift"; sourceTree = "<group>"; };
+		848F5AD2276089FF00C17962 /* Product.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Product.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				848F5AAA2757763600C17962 /* ProductViewController.swift */,
 				848F5AC6275A42CA00C17962 /* Product.swift */,
 				848F5AAC2757763600C17962 /* Main.storyboard */,
+				848F5AD2276089FF00C17962 /* Product.storyboard */,
 				848F5AC32758C05D00C17962 /* ViewProductTableViewCell.swift */,
 				848F5AB22757764500C17962 /* Assets.xcassets */,
 				848F5AB42757764500C17962 /* LaunchScreen.storyboard */,
@@ -152,6 +155,7 @@
 			files = (
 				848F5AB62757764500C17962 /* LaunchScreen.storyboard in Resources */,
 				848F5AB32757764500C17962 /* Assets.xcassets in Resources */,
+				848F5AD3276089FF00C17962 /* Product.storyboard in Resources */,
 				848F5AAE2757763600C17962 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
