@@ -21,6 +21,7 @@
 		848F5AD3276089FF00C17962 /* Product.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848F5AD2276089FF00C17962 /* Product.storyboard */; };
 		848F5AD72760AF8F00C17962 /* ProductDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F5AD62760AF8F00C17962 /* ProductDataRepository.swift */; };
 		848F5ADB2760B6BC00C17962 /* ProductManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F5ADA2760B6BC00C17962 /* ProductManager.swift */; };
+		848F5AE12762585C00C17962 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848F5AE02762585C00C17962 /* Home.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		848F5AD2276089FF00C17962 /* Product.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Product.storyboard; sourceTree = "<group>"; };
 		848F5AD62760AF8F00C17962 /* ProductDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDataRepository.swift; sourceTree = "<group>"; };
 		848F5ADA2760B6BC00C17962 /* ProductManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductManager.swift; sourceTree = "<group>"; };
+		848F5AE02762585C00C17962 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			children = (
 				848F5AAC2757763600C17962 /* Main.storyboard */,
 				848F5AD2276089FF00C17962 /* Product.storyboard */,
+				848F5AE02762585C00C17962 /* Home.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				848F5AB62757764500C17962 /* LaunchScreen.storyboard in Resources */,
+				848F5AE12762585C00C17962 /* Home.storyboard in Resources */,
 				848F5AB32757764500C17962 /* Assets.xcassets in Resources */,
 				848F5AD3276089FF00C17962 /* Product.storyboard in Resources */,
 				848F5AAE2757763600C17962 /* Main.storyboard in Resources */,
