@@ -22,6 +22,9 @@
 		848F5AD72760AF8F00C17962 /* ProductDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F5AD62760AF8F00C17962 /* ProductDataRepository.swift */; };
 		848F5ADB2760B6BC00C17962 /* ProductManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F5ADA2760B6BC00C17962 /* ProductManager.swift */; };
 		848F5AE12762585C00C17962 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848F5AE02762585C00C17962 /* Home.storyboard */; };
+		848F5AE527632AD600C17962 /* CDProduct+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F5AE327632AD600C17962 /* CDProduct+CoreDataClass.swift */; };
+		848F5AE627632AD600C17962 /* CDProduct+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F5AE427632AD600C17962 /* CDProduct+CoreDataProperties.swift */; };
+		848F5AED276350E100C17962 /* PersistentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F5AEC276350E100C17962 /* PersistentStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,9 @@
 		848F5AD62760AF8F00C17962 /* ProductDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDataRepository.swift; sourceTree = "<group>"; };
 		848F5ADA2760B6BC00C17962 /* ProductManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductManager.swift; sourceTree = "<group>"; };
 		848F5AE02762585C00C17962 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		848F5AE327632AD600C17962 /* CDProduct+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDProduct+CoreDataClass.swift"; sourceTree = "<group>"; };
+		848F5AE427632AD600C17962 /* CDProduct+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDProduct+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		848F5AEC276350E100C17962 /* PersistentStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,8 @@
 		848F5A9A2757763600C17962 = {
 			isa = PBXGroup;
 			children = (
+				848F5AE327632AD600C17962 /* CDProduct+CoreDataClass.swift */,
+				848F5AE427632AD600C17962 /* CDProduct+CoreDataProperties.swift */,
 				848F5AA52757763600C17962 /* HealthKit */,
 				848F5AA42757763600C17962 /* Products */,
 				848F5ABF2757FCE200C17962 /* Frameworks */,
@@ -79,6 +87,7 @@
 			children = (
 				848F5ABE2757FCE200C17962 /* HealthKit.entitlements */,
 				848F5AA62757763600C17962 /* AppDelegate.swift */,
+				848F5AEC276350E100C17962 /* PersistentStorage.swift */,
 				848F5AA82757763600C17962 /* SceneDelegate.swift */,
 				848F5AAA2757763600C17962 /* ProductViewController.swift */,
 				848F5ADD2760B92D00C17962 /* Storyboard */,
@@ -193,14 +202,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848F5AED276350E100C17962 /* PersistentStorage.swift in Sources */,
 				848F5AB12757763600C17962 /* HealthKit.xcdatamodeld in Sources */,
 				848F5AD72760AF8F00C17962 /* ProductDataRepository.swift in Sources */,
+				848F5AE527632AD600C17962 /* CDProduct+CoreDataClass.swift in Sources */,
 				848F5AAB2757763600C17962 /* ProductViewController.swift in Sources */,
 				848F5ACE275E7A0800C17962 /* Product Details ControllerViewController.swift in Sources */,
 				848F5ADB2760B6BC00C17962 /* ProductManager.swift in Sources */,
 				848F5AA72757763600C17962 /* AppDelegate.swift in Sources */,
 				848F5AC42758C05D00C17962 /* ViewProductTableViewCell.swift in Sources */,
 				848F5AA92757763600C17962 /* SceneDelegate.swift in Sources */,
+				848F5AE627632AD600C17962 /* CDProduct+CoreDataProperties.swift in Sources */,
 				848F5AC7275A42CA00C17962 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

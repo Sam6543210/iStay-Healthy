@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H1419" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="CDProduct" representedClassName="CDProduct" syncable="YES" codeGenerationType="class">
-        <attribute name="bmi" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+    <entity name="CDProduct" representedClassName="CDProduct" syncable="YES">
+        <attribute name="addedFlavour" optional="YES" attributeType="String"/>
+        <attribute name="allergenInformation1" optional="YES" attributeType="String"/>
+        <attribute name="allergenInformation2" optional="YES" attributeType="String"/>
+        <attribute name="brand" optional="YES" attributeType="String"/>
         <attribute name="endingAge" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="energy" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="fatContent" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="ingrediant1" optional="YES" attributeType="String"/>
-        <attribute name="ingrediant2" optional="YES" attributeType="String"/>
         <attribute name="productDescription" optional="YES" attributeType="String"/>
         <attribute name="productImage" optional="YES" attributeType="String"/>
         <attribute name="productName" optional="YES" attributeType="String"/>
         <attribute name="productPrice" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="saltContent" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="sodium" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
         <attribute name="startingAge" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="sugarContent" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="CDProduct" positionX="-45" positionY="0" width="128" height="223"/>
+        <element name="CDProduct" positionX="-45" positionY="0" width="128" height="268"/>
     </elements>
 </model>

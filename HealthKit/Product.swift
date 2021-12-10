@@ -6,15 +6,12 @@
 //
 
 import Foundation
-class Product
+struct Product
 {
-    var productName:String
-    var productImage:String
-    var price:String
-    init(pName:String,pImage:String,pPrice:String)
-    {
-        productName = pName
-        productImage = pImage
-        price = pPrice
-    }
+    var productName, productImage, brand, addedFlavour, allergenInformation1, allergenInformation2: String?
+    var sugarContent, sodium, fatContent: NSDecimalNumber?
+    var startingAge, endingAge, energy, productPrice: Int64
+    var productDescription:
+        String?
+    let id: UUID
 }

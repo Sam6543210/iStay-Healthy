@@ -13,6 +13,14 @@ struct ProductManager
     
     func createProduct(product:Product)
     {
-        //productData.create(product: Product)
+        productData.create(product: product)
+    }
+    func fetchProduct() -> [Product]?
+    {
+        return productData.getAll()
+    }
+    func deleteProduct(id:UUID) -> Bool
+    {
+        return productData.delete(id:id)
     }
 }
