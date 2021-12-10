@@ -149,7 +149,7 @@
         <scene sceneID="g3d-O2-kZY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wJp-4W-00y" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Products" image="products" id="fUc-NP-d96"/>
+                    <tabBarItem key="tabBarItem" title="Products" image="productsicon" id="fUc-NP-d96"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UJd-we-X8W">
@@ -167,7 +167,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="products" width="30" height="30"/>
+        <image name="productsicon" width="30" height="30"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

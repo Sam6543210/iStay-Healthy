@@ -25,6 +25,7 @@
 		848F5AE527632AD600C17962 /* CDProduct+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F5AE327632AD600C17962 /* CDProduct+CoreDataClass.swift */; };
 		848F5AE627632AD600C17962 /* CDProduct+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F5AE427632AD600C17962 /* CDProduct+CoreDataProperties.swift */; };
 		848F5AED276350E100C17962 /* PersistentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F5AEC276350E100C17962 /* PersistentStorage.swift */; };
+		84C7C4292763ADFB002D5D5C /* HealthDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C7C4282763ADFB002D5D5C /* HealthDetails.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		848F5AE327632AD600C17962 /* CDProduct+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDProduct+CoreDataClass.swift"; sourceTree = "<group>"; };
 		848F5AE427632AD600C17962 /* CDProduct+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDProduct+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		848F5AEC276350E100C17962 /* PersistentStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorage.swift; sourceTree = "<group>"; };
+		84C7C4282763ADFB002D5D5C /* HealthDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HealthDetails.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				848F5AAC2757763600C17962 /* Main.storyboard */,
 				848F5AD2276089FF00C17962 /* Product.storyboard */,
 				848F5AE02762585C00C17962 /* Home.storyboard */,
+				84C7C4282763ADFB002D5D5C /* HealthDetails.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				848F5AB62757764500C17962 /* LaunchScreen.storyboard in Resources */,
+				84C7C4292763ADFB002D5D5C /* HealthDetails.storyboard in Resources */,
 				848F5AE12762585C00C17962 /* Home.storyboard in Resources */,
 				848F5AB32757764500C17962 /* Assets.xcassets in Resources */,
 				848F5AD3276089FF00C17962 /* Product.storyboard in Resources */,
