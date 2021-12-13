@@ -10,6 +10,10 @@ import HealthKit
 
 let healthKitStore: HKHealthStore = HKHealthStore()
 
+
+
+
+
 class Product_Details_ControllerViewController: UIViewController {
 
     override func viewDidLoad() {
