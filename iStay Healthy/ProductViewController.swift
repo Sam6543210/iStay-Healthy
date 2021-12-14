@@ -17,11 +17,11 @@ class ProductViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        //fillData()
+       // fillData()
     }
     func fillData()
     {
-        let product1 = Product(productName: "Aloo Bhujia (175g)", productImage: "image3", brand: "Haldiram's", addedFlavour: "natural flavour", allergenInformation1: "Peanut", allergenInformation2: "Cashew", sugarContent: 0.25, sodium: 615.0, fatContent: 38.12, startingAge: 15, endingAge: 50, energy: 569, productPrice: 40, productDescription: "Its a spicy mint flavoured, extruded Potato snack for all ages", id: UUID())
+        let product1 = Product(productName: "ChocoBakes (21g)", productImage: "product2", brand: "Cadbury", addedFlavour: "Vanila, Chocolate", allergenInformation1: "Milk", allergenInformation2: "Wheat", sugarContent: 41.1, sodium: 224.0, fatContent: 21.9, startingAge: 15, endingAge: 50, energy: 465, productPrice: 20, productDescription: "It's a sponge cake enrobed in a chocolatey coating outside and layered with chocolatey cream inside", id: UUID())
         manager.createProduct(product: product1)
        
     }
@@ -49,7 +49,7 @@ extension ProductViewController: UITableViewDelegate,UITableViewDataSource
         cell.cellProductPrice.text = "Rs. \(product.productPrice)"
       
         cell.layer.cornerRadius = 10
-        cell.layer.borderColor = UIColor.gray.cgColor
+        cell.layer.borderColor = UIColor.purple.cgColor
         cell.layer.borderWidth = 2
  
         return cell
