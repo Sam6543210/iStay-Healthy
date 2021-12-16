@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dUN-0F-veq">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dUN-0F-veq">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,48 +13,63 @@
             <objects>
                 <viewController id="dUN-0F-veq" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fEQ-zT-ueC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9lO-7b-amT">
-                                <rect key="frame" x="0.0" y="61.999999999999972" width="414" height="504.33333333333331"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2BC-yC-5NJ" userLabel="Image Stack View">
+                                <rect key="frame" x="0.0" y="64" width="414" height="200"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homepage" translatesAutoresizingMaskIntoConstraints="NO" id="eYT-Ia-F4H">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="370"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="414" id="7vz-zP-ebq"/>
-                                            <constraint firstAttribute="height" constant="370" id="dfI-pw-r8K"/>
+                                            <constraint firstAttribute="width" constant="320" id="I3J-8w-PBl"/>
+                                            <constraint firstAttribute="height" constant="200" id="kNa-r7-iFE"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Health Kit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfC-tV-udD">
-                                        <rect key="frame" x="76.333333333333343" y="380" width="261.33333333333326" height="33"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
-                                        <color key="textColor" red="0.16014629220000001" green="0.2316189531" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health in your finger tip. Health Better. Life Better. We're with you in the Journey  of Healthy Life." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5R-LA-POx">
-                                        <rect key="frame" x="92.666666666666686" y="423" width="229" height="81.333333333333314"/>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="QeU-pZ-VNo" userLabel="Text Stack View">
+                                <rect key="frame" x="0.0" y="711.5" width="414" height="81.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Health in your finger tip. Health Better. Life Better. We're with you in the Journey  of Healthy Life." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5R-LA-POx">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="81.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Health Kit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfC-tV-udD">
+                                <rect key="frame" x="76.5" y="431.5" width="261.5" height="33"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
+                                <color key="textColor" red="0.16014629220000001" green="0.2316189531" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0PE-mg-iD5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XfC-tV-udD" firstAttribute="centerY" secondItem="fEQ-zT-ueC" secondAttribute="centerY" id="2hl-q5-xnF"/>
+                            <constraint firstItem="0PE-mg-iD5" firstAttribute="trailing" secondItem="QeU-pZ-VNo" secondAttribute="trailing" id="6uh-Gf-PAL"/>
+                            <constraint firstItem="XfC-tV-udD" firstAttribute="centerX" secondItem="fEQ-zT-ueC" secondAttribute="centerX" id="85D-MG-4h2"/>
+                            <constraint firstItem="2BC-yC-5NJ" firstAttribute="leading" secondItem="0PE-mg-iD5" secondAttribute="leading" id="9Rd-W0-YMl"/>
+                            <constraint firstItem="2BC-yC-5NJ" firstAttribute="top" secondItem="0PE-mg-iD5" secondAttribute="top" constant="20" id="G7I-af-GH3"/>
+                            <constraint firstItem="0PE-mg-iD5" firstAttribute="bottom" secondItem="QeU-pZ-VNo" secondAttribute="bottom" constant="20" id="e8n-6O-9nm"/>
+                            <constraint firstItem="2BC-yC-5NJ" firstAttribute="trailing" secondItem="0PE-mg-iD5" secondAttribute="trailing" id="oxp-M6-GDJ"/>
+                            <constraint firstItem="QeU-pZ-VNo" firstAttribute="leading" secondItem="0PE-mg-iD5" secondAttribute="leading" id="zZL-DT-mBm"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="homeicon" id="r0e-aV-mYd"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oe1-Mk-hii" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="56.521739130434788" y="132.58928571428572"/>
+            <point key="canvasLocation" x="-337.5" y="15"/>
         </scene>
     </scenes>
     <resources>
-        <image name="homeicon" width="30" height="30"/>
-        <image name="homepage" width="1920" height="1280"/>
+        <image name="homeicon" width="20" height="20"/>
+        <image name="homepage" width="480.5" height="303.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
