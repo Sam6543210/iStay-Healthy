@@ -19,6 +19,14 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="300" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IGx-Le-Mho">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="R0N-S5-Nie">
+                                    <rect key="frame" x="0.0" y="356" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="View Product Details"/>
+                                    <connections>
+                                        <segue destination="aya-ZW-Ea3" kind="show" id="Ir7-ff-hGm"/>
+                                    </connections>
+                                </button>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="cQc-I5-FDL" customClass="ViewProductTableViewCell" customModule="iStay_Healthy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="300"/>
@@ -154,6 +162,7 @@
                         <viewLayoutGuide key="safeArea" id="wTa-1f-SET"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="tls-V9-pg3"/>
                     <connections>
                         <outlet property="heartRateLabel" destination="wTO-zF-c7B" id="5wk-bW-wy0"/>
                     </connections>
@@ -185,7 +194,7 @@
     </scenes>
     <resources>
         <image name="product2" width="1200" height="900"/>
-        <image name="productsicon" width="30" height="30"/>
+        <image name="productsicon" width="20" height="20"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

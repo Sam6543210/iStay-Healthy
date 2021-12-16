@@ -16,13 +16,12 @@ class Product_Details_ControllerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.displayHealthData()
         // Do any additional setup after loading the view.
     }
     
-    func readHealthData() -> (age : Int?, bpm : Int?){
+    func readCharacteristicHealthData() -> (Int?){
         var age : Int?
-        var bpm : Int?
         
         //read age
         do{
@@ -33,13 +32,50 @@ class Product_Details_ControllerViewController: UIViewController {
         }
         catch{}
         
-        //read bpm
-        do{
-            
+        return (age)
+    }
+    func readSampleHealthData(for sampleType : HKSampleType, completion : @escaping (HKQuantitySample?, Error?) -> Swift.Void){
+        
+        let mostRecentPredicate = HKQuery.predicateForSamples(withStart: Date.distantPast, end: Date(), options: .strictEndDate)
+        let sortDiscriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
+        let limit = 1
+        
+        let sampleQuery = HKSampleQuery(sampleType: sampleType, predicate: mostRecentPredicate, limit: limit, sortDescriptors: [sortDiscriptor]){
+            (query, samples, error) in
+            DispatchQueue.main.async {
+                guard let samples = samples,
+                      let mostRecentSample = samples.first as? HKQuantitySample else{
+                        completion(nil,error)
+                        return
+                }
+                completion(mostRecentSample,nil)
+            }
         }
-        return (age, bpm)
+        HKHealthStore().execute(sampleQuery)
     }
     
+    func displayHealthData(){
+        guard let heartRateSampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate) else{
+        print("Heart rate sample is no longer available in healthkit")
+        return
+        }
+        readSampleHealthData(for: heartRateSampleType){
+            (sample, error) in
+            guard let sample = sample else {
+                if let error = error {
+                    self.dislayAlert(for: error)
+                }
+                return
+            }
+            
+            self.heartRateLabel.text = String(sample.quantity.doubleValue(for: HKUnit(from: "count/min")))
+        }
+    }
+    private func dislayAlert(for error : Error){
+        let alert = UIAlertController(title: nil, message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "O.K.", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
     
     
 }
