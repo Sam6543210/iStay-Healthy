@@ -19,14 +19,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="300" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IGx-Le-Mho">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="R0N-S5-Nie">
-                                    <rect key="frame" x="0.0" y="356" width="414" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="View Product Details"/>
-                                    <connections>
-                                        <segue destination="aya-ZW-Ea3" kind="show" id="Ir7-ff-hGm"/>
-                                    </connections>
-                                </button>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="cQc-I5-FDL" customClass="ViewProductTableViewCell" customModule="iStay_Healthy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="300"/>
@@ -81,6 +73,7 @@
                                             <outlet property="cellProductImage" destination="geb-ix-yzV" id="wd6-nB-5XS"/>
                                             <outlet property="cellProductName" destination="bQE-fc-yeh" id="J0H-CH-731"/>
                                             <outlet property="cellProductPrice" destination="viN-yF-5uq" id="f4K-K2-uSL"/>
+                                            <segue destination="aya-ZW-Ea3" kind="show" identifier="navigateToProductDetail" id="8ic-fg-qLa"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -165,6 +158,7 @@
                     <navigationItem key="navigationItem" id="tls-V9-pg3"/>
                     <connections>
                         <outlet property="heartRateLabel" destination="wTO-zF-c7B" id="5wk-bW-wy0"/>
+                        <outlet property="passedProductImge" destination="Su8-zd-Xpy" id="xHp-aa-ld1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xmY-nL-ozn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

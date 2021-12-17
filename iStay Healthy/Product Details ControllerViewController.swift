@@ -12,12 +12,20 @@ let healthKitStore: HKHealthStore = HKHealthStore()
 
 class Product_Details_ControllerViewController: UIViewController {
 
+    @IBOutlet weak var passedProductImge: UIImageView!
     @IBOutlet weak var heartRateLabel: UILabel!
+    var selectedProduct: Product? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpProductDetail()
         self.displayHealthData()
         // Do any additional setup after loading the view.
+    }
+    func setUpProductDetail()
+    {
+        self.passedProductImge.image = UIImage(named:(selectedProduct?.productImage)!)
+        
     }
     
     func readCharacteristicHealthData() -> (Int?){

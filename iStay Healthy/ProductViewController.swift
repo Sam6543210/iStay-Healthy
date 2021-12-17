@@ -12,7 +12,7 @@ class ProductViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var products:[Product]?
+    var products:[Product]? = nil
     private let manager: ProductManager = ProductManager()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,8 +74,17 @@ extension ProductViewController: UITableViewDelegate,UITableViewDataSource
     
     
     
-    
-    
+    override func prepare(for segue: UIStoryboardSegue,sender:Any?)
+    {
+        if(segue.identifier == "navigateToProductDetail")
+        {
+            let productDetail = segue.destination as?
+                Product_Details_ControllerViewController
+            guard productDetail != nil else { return }
+            productDetail?.selectedProduct =
+                self.products![self.tableView.indexPathForSelectedRow!.row]
+        }
+    }
     
     
     
