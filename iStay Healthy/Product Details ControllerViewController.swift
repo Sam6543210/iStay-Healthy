@@ -14,12 +14,16 @@ class Product_Details_ControllerViewController: UIViewController {
 
     @IBOutlet weak var passedProductImge: UIImageView!
     @IBOutlet weak var heartRateLabel: UILabel!
+    @IBOutlet weak var ageLabel: UILabel!
+    @IBOutlet weak var genderLabel: UILabel!
+    
     var selectedProduct: Product? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpProductDetail()
-        self.displayHealthData()
+        displayHealthData()
+        displayAgeGender()
         // Do any additional setup after loading the view.
     }
     func setUpProductDetail()
@@ -28,19 +32,26 @@ class Product_Details_ControllerViewController: UIViewController {
         
     }
     
-    func readCharacteristicHealthData() -> (Int?){
+    func readCharacteristicHealthData() -> (age:Int?,gender:HKBiologicalSex?){
         var age : Int?
-        
+        var gender : HKBiologicalSex?
         //read age
         do{
             let birthDay = try healthKitStore.dateOfBirthComponents()
+            let biologicalSex = try healthKitStore.biologicalSex()
             let calender = Calendar.current
             let currentYear = calender.component(.year, from: Date())
             age = currentYear - birthDay.year!
+            gender = biologicalSex.biologicalSex
         }
         catch{}
         
-        return (age)
+        return (age,gender)
+    }
+    func displayAgeGender(){
+        let (age,gender) = self.readCharacteristicHealthData()
+        ageLabel.text = "\(age!) years"
+        genderLabel.text = "\(gender!)"
     }
     func readSampleHealthData(for sampleType : HKSampleType, completion : @escaping (HKQuantitySample?, Error?) -> Swift.Void){
         
@@ -77,6 +88,7 @@ class Product_Details_ControllerViewController: UIViewController {
             }
             
             self.heartRateLabel.text = String(sample.quantity.doubleValue(for: HKUnit(from: "count/min")))
+            self.heartRateLabel.text?.append(" count/min")
         }
     }
     private func dislayAlert(for error : Error){
