@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gha-9e-73m">
-    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,123 +13,228 @@
             <objects>
                 <viewController id="gha-9e-73m" customClass="HealthDetails_ViewController" customModule="iStay_Healthy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WPZ-v8-uUR">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="119" translatesAutoresizingMaskIntoConstraints="NO" id="Qhi-Ah-JP1">
-                                <rect key="frame" x="70" y="277.33333333333326" width="288" height="371.66666666666674"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi Emma" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5F-Vm-xCk">
+                                <rect key="frame" x="20" y="20" width="172.66666666666666" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ee-cc-mZ0">
+                                <rect key="frame" x="19.999999999999986" y="58.999999999999993" width="238.66666666666663" height="28.666666666666664"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Gb5-S3-sg8">
+                                <rect key="frame" x="15" y="107.66666666666669" width="389" height="241"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="jny-EC-Cbe">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="222.66666666666666"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="170" translatesAutoresizingMaskIntoConstraints="NO" id="UmN-9E-XWe" userLabel="Gender Stack View">
+                                        <rect key="frame" x="0.0" y="0.0" width="389" height="20.333333333333332"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi Emma" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5F-Vm-xCk">
-                                                <rect key="frame" x="0.0" y="0.0" width="78.333333333333329" height="24"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="eZP-DW-Xjt">
-                                                <rect key="frame" x="0.0" y="53.999999999999986" width="288" height="168.66666666666663"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9cX-7M-BCd" userLabel="Gender Image Text Stack View">
+                                                <rect key="frame" x="0.0" y="0.0" width="177.66666666666666" height="20.333333333333332"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ee-cc-mZ0">
-                                                        <rect key="frame" x="0.0" y="0.0" width="144.33333333333334" height="28.666666666666668"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="gendericon" translatesAutoresizingMaskIntoConstraints="NO" id="Omz-Xo-4YO">
+                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20.333333333333332"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtW-Sy-l2E">
+                                                        <rect key="frame" x="30" y="0.0" width="147.66666666666666" height="20.333333333333332"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="B2N-Uh-rUL">
-                                                        <rect key="frame" x="0.0" y="58.666666666666686" width="288" height="110"/>
-                                                        <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="165" translatesAutoresizingMaskIntoConstraints="NO" id="B9S-ac-FWh" userLabel="Diabetes Stack View">
-                                                                <rect key="frame" x="0.0" y="0.0" width="288" height="30"/>
-                                                                <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FkK-Hn-shX" userLabel="Diabetes Image Text Stack View">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="92.666666666666671" height="30"/>
-                                                                        <subviews>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="diabetesicon" translatesAutoresizingMaskIntoConstraints="NO" id="ibg-zS-Uhi">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="20" height="30"/>
-                                                                            </imageView>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diabetic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAs-Zo-akq">
-                                                                                <rect key="frame" x="29.999999999999996" y="0.0" width="62.666666666666657" height="30"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                                <nil key="textColor"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdK-oU-43t" userLabel="DiabetesEdit">
-                                                                        <rect key="frame" x="257.66666666666669" y="0.0" width="30.333333333333314" height="30"/>
-                                                                        <state key="normal" title="Edit"/>
-                                                                    </button>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="198" translatesAutoresizingMaskIntoConstraints="NO" id="vZl-eO-pRd" userLabel="Bmi Stack View">
-                                                                <rect key="frame" x="0.0" y="40" width="288" height="30"/>
-                                                                <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8xr-E0-Wcq" userLabel="Bmi Image Text Stack View">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="59.333333333333336" height="30"/>
-                                                                        <subviews>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bmiicon" translatesAutoresizingMaskIntoConstraints="NO" id="jlU-OW-2bK">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="20" height="30"/>
-                                                                            </imageView>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BMI" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAi-cj-Kao">
-                                                                                <rect key="frame" x="30" y="0.0" width="29.333333333333329" height="30"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                                <nil key="textColor"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LUP-iJ-VOq" userLabel="BmiEdit">
-                                                                        <rect key="frame" x="257.33333333333331" y="0.0" width="30.666666666666686" height="30"/>
-                                                                        <state key="normal" title="Edit"/>
-                                                                    </button>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="113" translatesAutoresizingMaskIntoConstraints="NO" id="Clb-0a-sVE" userLabel="Bp Stack View">
-                                                                <rect key="frame" x="0.0" y="80" width="288" height="30"/>
-                                                                <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5XL-pS-U84" userLabel="Bp Image Text Stack View">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="145" height="30"/>
-                                                                        <subviews>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bpicon" translatesAutoresizingMaskIntoConstraints="NO" id="BNQ-Sz-RRR">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="20" height="30"/>
-                                                                            </imageView>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blood Pressure" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBw-1K-Hb4">
-                                                                                <rect key="frame" x="30" y="0.0" width="115" height="30"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                                <nil key="textColor"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUz-a4-Jc1" userLabel="BpEdit">
-                                                                        <rect key="frame" x="258" y="0.0" width="30" height="30"/>
-                                                                        <state key="normal" title="Edit"/>
-                                                                    </button>
-                                                                </subviews>
-                                                            </stackView>
-                                                        </subviews>
-                                                    </stackView>
                                                 </subviews>
                                             </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNO-KQ-IQh">
+                                                <rect key="frame" x="347.66666666666669" y="0.0" width="41.333333333333314" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCo-Xh-VIQ">
-                                        <rect key="frame" x="111" y="341.66666666666669" width="66" height="30"/>
-                                        <state key="normal" title="Authorize"/>
-                                        <connections>
-                                            <action selector="authorizeHealthDetails:" destination="gha-9e-73m" eventType="touchUpInside" id="QAM-ic-I1z"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="128" translatesAutoresizingMaskIntoConstraints="NO" id="g9e-Mw-ZJL" userLabel="Birthday Stack View">
+                                        <rect key="frame" x="0.0" y="30.333333333333329" width="389" height="20.333333333333329"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0JB-pL-LgY" userLabel="Birthday Image Text Stack View">
+                                                <rect key="frame" x="0.0" y="0.0" width="219.66666666666666" height="20.333333333333332"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="birthdateicon" translatesAutoresizingMaskIntoConstraints="NO" id="mQc-hr-Egn">
+                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20.333333333333332"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Date of Birth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMf-RI-1Vw">
+                                                        <rect key="frame" x="30" y="0.0" width="189.66666666666666" height="20.333333333333332"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGy-HD-sZs">
+                                                <rect key="frame" x="347.66666666666669" y="0.0" width="41.333333333333314" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="198" translatesAutoresizingMaskIntoConstraints="NO" id="vZl-eO-pRd" userLabel="Bmi Stack View">
+                                        <rect key="frame" x="0.0" y="60.666666666666671" width="389" height="30"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8xr-E0-Wcq" userLabel="Bmi Image Text Stack View">
+                                                <rect key="frame" x="0.0" y="0.0" width="161" height="30"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="bmiicon" translatesAutoresizingMaskIntoConstraints="NO" id="jlU-OW-2bK">
+                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="30"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BMI" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAi-cj-Kao">
+                                                        <rect key="frame" x="30" y="0.0" width="131" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LUP-iJ-VOq" userLabel="BmiEdit">
+                                                <rect key="frame" x="359" y="0.0" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="cHH-RE-omJ"/>
+                                                </constraints>
+                                                <state key="normal" title="Edit"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="145" translatesAutoresizingMaskIntoConstraints="NO" id="2ER-BC-OKe" userLabel="Cholerstrol Stack View">
+                                        <rect key="frame" x="0.0" y="100.66666666666667" width="389" height="30.000000000000014"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eYt-lg-D8y" userLabel="Cholerstrol Image Text Stack View">
+                                                <rect key="frame" x="0.0" y="0.0" width="214" height="30"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="cholerstrlicon" translatesAutoresizingMaskIntoConstraints="NO" id="6ok-7a-Q8Q">
+                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="30"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cholerstrol" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSl-2o-ORh">
+                                                        <rect key="frame" x="30" y="0.0" width="184" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lU2-7m-GLV" userLabel="CholerstrolEdit">
+                                                <rect key="frame" x="359" y="0.0" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="RHA-YU-xtV"/>
+                                                </constraints>
+                                                <state key="normal" title="Edit"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="113" translatesAutoresizingMaskIntoConstraints="NO" id="Clb-0a-sVE" userLabel="Bp Stack View">
+                                        <rect key="frame" x="0.0" y="140.66666666666669" width="389" height="30"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5XL-pS-U84" userLabel="Bp Image Text Stack View">
+                                                <rect key="frame" x="0.0" y="0.0" width="246" height="30"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="bpicon" translatesAutoresizingMaskIntoConstraints="NO" id="BNQ-Sz-RRR">
+                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="30"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blood Pressure" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBw-1K-Hb4">
+                                                        <rect key="frame" x="30" y="0.0" width="216" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUz-a4-Jc1" userLabel="BpEdit">
+                                                <rect key="frame" x="359" y="0.0" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="ekT-BX-eVd"/>
+                                                </constraints>
+                                                <state key="normal" title="Edit"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="165" translatesAutoresizingMaskIntoConstraints="NO" id="B9S-ac-FWh" userLabel="Diabetes Stack View">
+                                        <rect key="frame" x="0.0" y="180.66666666666663" width="389" height="30"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FkK-Hn-shX" userLabel="Diabetes Image Text Stack View">
+                                                <rect key="frame" x="0.0" y="0.0" width="194" height="30"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="diabetesicon" translatesAutoresizingMaskIntoConstraints="NO" id="ibg-zS-Uhi">
+                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="30"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diabetic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAs-Zo-akq">
+                                                        <rect key="frame" x="30" y="0.0" width="164" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdK-oU-43t" userLabel="DiabetesEdit">
+                                                <rect key="frame" x="359" y="0.0" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="VKJ-hS-0Hl"/>
+                                                </constraints>
+                                                <state key="normal" title="Edit"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="165" translatesAutoresizingMaskIntoConstraints="NO" id="v2i-FK-W23" userLabel="Allergies Stack View">
+                                        <rect key="frame" x="0.0" y="220.66666666666663" width="389" height="20.333333333333343"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="g8C-PR-FSX" userLabel="Allergies Image Text Stack View">
+                                                <rect key="frame" x="0.0" y="0.0" width="182.66666666666666" height="20.333333333333332"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="allergyicon" translatesAutoresizingMaskIntoConstraints="NO" id="LHo-3a-jVi">
+                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20.333333333333332"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Allergies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DlX-6x-LlQ">
+                                                        <rect key="frame" x="30" y="0.0" width="152.66666666666666" height="20.333333333333332"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJA-Mw-gEA">
+                                                <rect key="frame" x="347.66666666666669" y="0.0" width="41.333333333333314" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCo-Xh-VIQ">
+                                <rect key="frame" x="127" y="637" width="160" height="30"/>
+                                <state key="normal" title="Authorize"/>
+                                <connections>
+                                    <action selector="authorizeHealthDetails:" destination="gha-9e-73m" eventType="touchUpInside" id="QAM-ic-I1z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WB8-5G-pHW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Qhi-Ah-JP1" firstAttribute="centerX" secondItem="WPZ-v8-uUR" secondAttribute="centerX" id="Oze-as-6Lg"/>
-                            <constraint firstItem="Qhi-Ah-JP1" firstAttribute="centerY" secondItem="WPZ-v8-uUR" secondAttribute="centerY" id="Pr9-kJ-fez"/>
+                            <constraint firstItem="WB8-5G-pHW" firstAttribute="trailing" secondItem="o5F-Vm-xCk" secondAttribute="trailing" constant="221.5" id="1r4-YL-cEc"/>
+                            <constraint firstItem="Gb5-S3-sg8" firstAttribute="leading" secondItem="WB8-5G-pHW" secondAttribute="leading" constant="15" id="3Mv-gF-kA8"/>
+                            <constraint firstItem="3ee-cc-mZ0" firstAttribute="leading" secondItem="WB8-5G-pHW" secondAttribute="leading" constant="20" id="7aN-Ie-NJh"/>
+                            <constraint firstItem="o5F-Vm-xCk" firstAttribute="leading" secondItem="WB8-5G-pHW" secondAttribute="leading" constant="20" id="898-hZ-O6h"/>
+                            <constraint firstItem="WB8-5G-pHW" firstAttribute="bottom" secondItem="zCo-Xh-VIQ" secondAttribute="bottom" constant="20" id="DRx-jq-ZXm"/>
+                            <constraint firstItem="o5F-Vm-xCk" firstAttribute="top" secondItem="WB8-5G-pHW" secondAttribute="top" constant="20" id="HBN-zX-V52"/>
+                            <constraint firstItem="Gb5-S3-sg8" firstAttribute="top" secondItem="3ee-cc-mZ0" secondAttribute="bottom" constant="20" id="X7h-lx-flj"/>
+                            <constraint firstItem="3ee-cc-mZ0" firstAttribute="top" secondItem="o5F-Vm-xCk" secondAttribute="bottom" constant="15" id="anI-Zt-y4i"/>
+                            <constraint firstItem="WB8-5G-pHW" firstAttribute="trailing" secondItem="Gb5-S3-sg8" secondAttribute="trailing" constant="10" id="fle-en-ODu"/>
+                            <constraint firstItem="WB8-5G-pHW" firstAttribute="trailing" secondItem="zCo-Xh-VIQ" secondAttribute="trailing" constant="127" id="o9m-3b-duf"/>
+                            <constraint firstItem="WB8-5G-pHW" firstAttribute="trailing" secondItem="3ee-cc-mZ0" secondAttribute="trailing" constant="155.5" id="pAw-Su-r71"/>
+                            <constraint firstItem="zCo-Xh-VIQ" firstAttribute="leading" secondItem="WB8-5G-pHW" secondAttribute="leading" constant="127" id="pGL-Se-7On"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Health Details" image="healthicon" id="lrD-VG-ij4"/>
@@ -144,9 +249,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="allergyicon" width="20" height="20"/>
+        <image name="birthdateicon" width="20" height="20"/>
         <image name="bmiicon" width="20" height="20"/>
         <image name="bpicon" width="20" height="20"/>
+        <image name="cholerstrlicon" width="20" height="20"/>
         <image name="diabetesicon" width="20" height="20"/>
+        <image name="gendericon" width="20" height="20"/>
         <image name="healthicon" width="20" height="20"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
