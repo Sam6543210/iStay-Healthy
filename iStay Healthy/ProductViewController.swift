@@ -21,7 +21,7 @@ class ProductViewController: UIViewController {
     }
     func fillData()
     {
-        let product1 = Product(productName: "ChocoBakes (21g)", productImage: "product2", brand: "Cadbury", addedFlavour: "Vanila, Chocolate", allergenInformation1: "Milk", allergenInformation2: "Wheat", sugarContent: 41.1, sodium: 224.0, fatContent: 21.9, startingAge: 15, endingAge: 50, energy: 465, productPrice: 20, productDescription: "It's a sponge cake enrobed in a chocolatey coating outside and layered with chocolatey cream inside", id: UUID())
+        let product1 = Product(productName: "Ferrero Rocher (300g)", productImage: "product4", brand: "Ferrero", addedFlavour: "Vanillin", allergenInformation1: "Hazelnuts", allergenInformation2: "Gluten", sugarContent: 39.9, sodium: 8, fatContent: 42.7, startingAge: 10, endingAge: 40, energy: 595, productPrice: 845, productDescription: "Ferrero Rocher is a chocolate made of whole roasted hazelnut encased in a thin wafer shell filled with cream", id: UUID())
         manager.createProduct(product: product1)
        
     }
