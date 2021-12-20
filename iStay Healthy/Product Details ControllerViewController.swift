@@ -18,6 +18,9 @@ class Product_Details_ControllerViewController: UIViewController {
     @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var heightLabel: UILabel!
+    @IBOutlet weak var cholesterolLabel: UILabel!
+    @IBOutlet weak var sugarLabel: UILabel!
+    @IBOutlet weak var sodiumLabel: UILabel!
     
     var selectedProduct: Product? = nil
     
@@ -88,6 +91,18 @@ class Product_Details_ControllerViewController: UIViewController {
         print("Height sample is no longer available in healthkit")
         return
         }
+        guard let cholesterolSampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryCholesterol) else{
+        print("Cholesterol sample is no longer available in healthkit")
+        return
+        }
+        guard let sugarSampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietarySugar) else{
+        print("Sugar sample is no longer available in healthkit")
+        return
+        }
+        guard let sodiumSampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietarySodium) else{
+        print("Sodium sample is no longer available in healthkit")
+        return
+        }
         readSampleHealthData(for: heartRateSampleType){
             (sample, error) in
             guard let sample = sample else {
@@ -121,7 +136,39 @@ class Product_Details_ControllerViewController: UIViewController {
             self.heightLabel.text = String(sample.quantity.doubleValue(for: HKUnit(from: "ft")))
             self.heightLabel.text?.append(" ft")
         }
-        
+        readSampleHealthData(for: cholesterolSampleType){
+            (sample, error) in
+            guard let sample = sample else {
+                if let error = error {
+                    self.dislayAlert(for: error)
+                }
+                return
+            }
+            self.cholesterolLabel.text = String(sample.quantity.doubleValue(for: HKUnit(from: "mg")))
+            self.cholesterolLabel.text?.append(" mg/dL")
+        }
+        readSampleHealthData(for: sugarSampleType){
+            (sample, error) in
+            guard let sample = sample else {
+                if let error = error {
+                    self.dislayAlert(for: error)
+                }
+                return
+            }
+            self.sugarLabel.text = String(sample.quantity.doubleValue(for: HKUnit(from: "mg")))
+            self.sugarLabel.text?.append(" mg/dL")
+        }
+        readSampleHealthData(for: sodiumSampleType){
+            (sample, error) in
+            guard let sample = sample else {
+                if let error = error {
+                    self.dislayAlert(for: error)
+                }
+                return
+            }
+            self.sodiumLabel.text = String(sample.quantity.doubleValue(for: HKUnit(from: "mg")))
+            self.sodiumLabel.text?.append(" mg/dL")
+        }
     }
     private func dislayAlert(for error : Error){
         let alert = UIAlertController(title: nil, message: error.localizedDescription, preferredStyle: .alert)
