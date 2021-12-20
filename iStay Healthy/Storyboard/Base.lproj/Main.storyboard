@@ -14,7 +14,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o33-ut-eze" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1922" y="281"/>
+            <point key="canvasLocation" x="-480" y="281"/>
         </scene>
         <!--HealthDetails-->
         <scene sceneID="hov-Rd-dse">
@@ -34,7 +34,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9aL-Gm-1Iy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-797" y="281"/>
+            <point key="canvasLocation" x="-2026" y="291"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="D7p-KT-DAp">
