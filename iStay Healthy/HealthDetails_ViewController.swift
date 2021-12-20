@@ -29,12 +29,12 @@ class HealthDetails_ViewController: UIViewController {
             HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.biologicalSex)!,
             
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!,
+            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.height)!,
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass)!,
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMassIndex)!,
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryCholesterol)!,
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietarySugar)!,
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietarySodium)!
-            
         ]
         let healthKitTypesToWrite : Set<HKSampleType> = [
         ]
