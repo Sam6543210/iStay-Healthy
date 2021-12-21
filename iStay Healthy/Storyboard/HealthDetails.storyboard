@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gha-9e-73m">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gha-9e-73m">
     <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -301,7 +301,11 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="authorizeHealthDetails" destination="zCo-Xh-VIQ" id="o9b-Sc-RAu"/>
+                        <outlet property="bloodPressureLabel" destination="925-Tg-6Kz" id="ygM-lM-Eyg"/>
+                        <outlet property="bmiLabel" destination="OxO-ss-7YU" id="Gv2-Ag-1L8"/>
+                        <outlet property="cholesterolLabel" destination="lhP-Pj-MEV" id="Mgd-wV-T18"/>
                         <outlet property="dateOfBirthLabel" destination="kGy-HD-sZs" id="j1e-oH-PDe"/>
+                        <outlet property="diabetesLabel" destination="UsB-0v-tuF" id="IBT-dr-rJM"/>
                         <outlet property="genderLabel" destination="HNO-KQ-IQh" id="r72-uz-6DD"/>
                     </connections>
                 </viewController>

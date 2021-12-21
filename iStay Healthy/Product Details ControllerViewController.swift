@@ -13,22 +13,18 @@ let healthKitStore: HKHealthStore = HKHealthStore()
 class Product_Details_ControllerViewController: UIViewController {
 
     @IBOutlet weak var passedProductImge: UIImageView!
-    @IBOutlet weak var heartRateLabel: UILabel!
-    @IBOutlet weak var ageLabel: UILabel!
-    @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var heightLabel: UILabel!
-    @IBOutlet weak var cholesterolLabel: UILabel!
-    @IBOutlet weak var sugarLabel: UILabel!
     @IBOutlet weak var sodiumLabel: UILabel!
     
     var selectedProduct: Product? = nil
+    let healthDetails = HealthDetails_ViewController.init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpProductDetail()
         displayHealthData()
-        displayAgeGender()
+        
         // Do any additional setup after loading the view.
     }
     func setUpProductDetail()
@@ -37,52 +33,9 @@ class Product_Details_ControllerViewController: UIViewController {
         
     }
     
-    func readCharacteristicHealthData() -> (age:Int?,gender:HKBiologicalSex?){
-        var age : Int?
-        var gender : HKBiologicalSex?
-        //read age
-        do{
-            let birthDay = try healthKitStore.dateOfBirthComponents()
-            let biologicalSex = try healthKitStore.biologicalSex()
-            let calender = Calendar.current
-            let currentYear = calender.component(.year, from: Date())
-            age = currentYear - birthDay.year!
-            gender = biologicalSex.biologicalSex
-        }
-        catch{}
-        
-        return (age,gender)
-    }
-    func displayAgeGender(){
-        let (age,gender) = self.readCharacteristicHealthData()
-        ageLabel.text = "\(age!) years"
-        genderLabel.text = "\(gender!)"
-    }
-    func readSampleHealthData(for sampleType : HKSampleType, completion : @escaping (HKQuantitySample?, Error?) -> Swift.Void){
-        
-        let mostRecentPredicate = HKQuery.predicateForSamples(withStart: Date.distantPast, end: Date(), options: .strictEndDate)
-        let sortDiscriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
-        let limit = 1
-        
-        let sampleQuery = HKSampleQuery(sampleType: sampleType, predicate: mostRecentPredicate, limit: limit, sortDescriptors: [sortDiscriptor]){
-            (query, samples, error) in
-            DispatchQueue.main.async {
-                guard let samples = samples,
-                      let mostRecentSample = samples.first as? HKQuantitySample else{
-                        completion(nil,error)
-                        return
-                }
-                completion(mostRecentSample,nil)
-            }
-        }
-        HKHealthStore().execute(sampleQuery)
-    }
     
     func displayHealthData(){
-        guard let heartRateSampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate) else{
-        print("Heart rate sample is no longer available in healthkit")
-        return
-        }
+        
         guard let weightSampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass) else{
         print("Weight sample is no longer available in healthkit")
         return
@@ -91,30 +44,11 @@ class Product_Details_ControllerViewController: UIViewController {
         print("Height sample is no longer available in healthkit")
         return
         }
-        guard let cholesterolSampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryCholesterol) else{
-        print("Cholesterol sample is no longer available in healthkit")
-        return
-        }
-        guard let sugarSampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietarySugar) else{
-        print("Sugar sample is no longer available in healthkit")
-        return
-        }
         guard let sodiumSampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietarySodium) else{
         print("Sodium sample is no longer available in healthkit")
         return
         }
-        readSampleHealthData(for: heartRateSampleType){
-            (sample, error) in
-            guard let sample = sample else {
-                if let error = error {
-                    self.dislayAlert(for: error)
-                }
-                return
-            }
-            self.heartRateLabel.text = String(sample.quantity.doubleValue(for: HKUnit(from: "count/min")))
-            self.heartRateLabel.text?.append(" count/min")
-        }
-        readSampleHealthData(for: weightSampleType){
+        healthDetails.readSampleHealthData(for: weightSampleType){
             (sample, error) in
             guard let sample = sample else {
                 if let error = error {
@@ -125,7 +59,7 @@ class Product_Details_ControllerViewController: UIViewController {
             self.weightLabel.text = String(sample.quantity.doubleValue(for: HKUnit(from: "kg")))
             self.weightLabel.text?.append(" kg")
         }
-        readSampleHealthData(for: heightSampleType){
+        healthDetails.readSampleHealthData(for: heightSampleType){
             (sample, error) in
             guard let sample = sample else {
                 if let error = error {
@@ -136,29 +70,7 @@ class Product_Details_ControllerViewController: UIViewController {
             self.heightLabel.text = String(sample.quantity.doubleValue(for: HKUnit(from: "ft")))
             self.heightLabel.text?.append(" ft")
         }
-        readSampleHealthData(for: cholesterolSampleType){
-            (sample, error) in
-            guard let sample = sample else {
-                if let error = error {
-                    self.dislayAlert(for: error)
-                }
-                return
-            }
-            self.cholesterolLabel.text = String(sample.quantity.doubleValue(for: HKUnit(from: "mg")))
-            self.cholesterolLabel.text?.append(" mg/dL")
-        }
-        readSampleHealthData(for: sugarSampleType){
-            (sample, error) in
-            guard let sample = sample else {
-                if let error = error {
-                    self.dislayAlert(for: error)
-                }
-                return
-            }
-            self.sugarLabel.text = String(sample.quantity.doubleValue(for: HKUnit(from: "mg")))
-            self.sugarLabel.text?.append(" mg/dL")
-        }
-        readSampleHealthData(for: sodiumSampleType){
+        healthDetails.readSampleHealthData(for: sodiumSampleType){
             (sample, error) in
             guard let sample = sample else {
                 if let error = error {
