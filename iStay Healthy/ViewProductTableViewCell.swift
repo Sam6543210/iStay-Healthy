@@ -10,6 +10,7 @@ import UIKit
 class ViewProductTableViewCell: UITableViewCell {
     @IBOutlet weak var cellProductPrice: UILabel!
     
+    @IBOutlet weak var addToCartButton: UIButton!
     @IBOutlet weak var cellProductName: UILabel!
     @IBOutlet weak var cellProductImage: UIImageView!
     override func awakeFromNib() {

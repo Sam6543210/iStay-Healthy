@@ -12,6 +12,7 @@ class ProductViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+   
     var products:[Product]? = nil
     private let manager: ProductManager = ProductManager()
     override func viewDidLoad() {

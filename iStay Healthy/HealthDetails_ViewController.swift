@@ -10,15 +10,37 @@ import HealthKit
 
 class HealthDetails_ViewController: UIViewController {
 
+    @IBOutlet weak var dateOfBirthLabel: UILabel!
     @IBAction func authorizeHealthDetails(_ sender: Any) {
         self.authorizeHealthKit()
     }
     @IBOutlet weak var authorizeHealthDetails: UIButton!
    
+    @IBOutlet weak var genderLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        displayDateOfBirth()
 
         // Do any additional setup after loading the view.
+    }
+    func readDateOfBirth() -> DateComponents?
+    {
+        var birthDay: DateComponents?
+        
+        do {
+             birthDay = try healthKitStore.dateOfBirthComponents()
+            
+        }
+        catch { }
+        return birthDay
+    }
+    func displayDateOfBirth()
+    {
+        let birthDay = readDateOfBirth()
+       
+        
+        dateOfBirthLabel.text = String("\(birthDay!.day!)-\(birthDay!.month!)-\(birthDay!.year!)")
+        
     }
     
     func authorizeHealthKit(){
