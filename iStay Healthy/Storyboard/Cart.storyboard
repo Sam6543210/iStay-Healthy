@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="300" id="eJo-DI-jef">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="300" id="eJo-DI-jef" customClass="CartTableViewCell" customModule="iStay_Healthy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eJo-DI-jef" id="BzB-tF-v9D">
@@ -65,9 +65,17 @@
                                                 <constraint firstItem="LkD-cX-1ZP" firstAttribute="trailing" secondItem="BzB-tF-v9D" secondAttribute="trailingMargin" constant="15" id="t5w-6i-T4e"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.036236949265003204" green="0.91580289602279663" blue="0.058645598590373993" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="cellCartProductImage" destination="Qc4-kb-u1G" id="6Fm-BE-TSM"/>
+                                            <outlet property="cellCartProductName" destination="ECa-nq-ZWN" id="4gx-Km-fl7"/>
+                                            <outlet property="cellCartProductPrice" destination="LkD-cX-1ZP" id="I7K-AD-P1n"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="hfH-lG-j5B" id="S6C-x8-fXI"/>
+                                    <outlet property="delegate" destination="hfH-lG-j5B" id="8p7-2D-WDB"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="v7j-5f-8jI"/>
@@ -80,8 +88,13 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Cart" image="cart.fill" catalog="system" id="QOy-cQ-yCS"/>
-                    <navigationItem key="navigationItem" title="My Cart" id="WwE-hz-Wam"/>
+                    <navigationItem key="navigationItem" title="My Cart" id="WwE-hz-Wam">
+                        <barButtonItem key="backBarButtonItem" title="Products" id="4Kj-zI-c3l"/>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="rBu-fd-BCy" id="AqB-4b-8Np"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LRB-Up-wbZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

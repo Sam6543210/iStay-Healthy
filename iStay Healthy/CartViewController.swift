@@ -8,7 +8,8 @@
 import UIKit
 
 class CartViewController: UIViewController {
-
+    @IBOutlet weak var tableView: UITableView!
+    var cartProducts:[Product]? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,4 +27,21 @@ class CartViewController: UIViewController {
     }
     */
 
+
 }
+/*
+extension CartViewController: UITableViewDelegate, UITableViewDataSource
+{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       // return cartProducts!.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       // let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CartTableViewCell
+      //  cell.cellCartProductPrice = UIImage(
+        return nil
+    }
+ */
+    
+    
+//}
