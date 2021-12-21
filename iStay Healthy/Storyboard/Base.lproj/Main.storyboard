@@ -49,11 +49,22 @@
                         <segue destination="gNY-Pv-bJg" kind="relationship" relationship="viewControllers" id="HzX-Kg-e9F"/>
                         <segue destination="T2g-wG-C9L" kind="relationship" relationship="viewControllers" id="69x-AI-lmJ"/>
                         <segue destination="f7y-DJ-BhN" kind="relationship" relationship="viewControllers" id="lfQ-mN-akM"/>
+                        <segue destination="VYy-7N-5P4" kind="relationship" relationship="viewControllers" id="fSB-dD-w6M"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="97A-Ph-i1o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1396" y="-137"/>
+        </scene>
+        <!--Cart-->
+        <scene sceneID="sG6-Qq-95m">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Cart" id="VYy-7N-5P4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="W4L-Ds-Nqb"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jKo-Mb-Wpv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-622" y="269"/>
         </scene>
     </scenes>
 </document>
