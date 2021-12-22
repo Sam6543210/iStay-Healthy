@@ -11,7 +11,7 @@
         <!--My Cart-->
         <scene sceneID="bOy-St-J6H">
             <objects>
-                <viewController id="hfH-lG-j5B" customClass="CartViewController" customModule="iStay_Healthy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="cartId" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hfH-lG-j5B" customClass="CartViewController" customModule="iStay_Healthy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ogq-fB-7nU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,6 +51,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-2" translatesAutoresizingMaskIntoConstraints="NO" id="Mmx-ah-0cN">
+                                                    <rect key="frame" x="0.0" y="11" width="65" height="104"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ECa-nq-ZWN" firstAttribute="top" secondItem="Qc4-kb-u1G" secondAttribute="bottom" constant="22" id="DlN-ET-Vaa"/>
@@ -69,6 +73,7 @@
                                             <outlet property="cellCartProductImage" destination="Qc4-kb-u1G" id="6Fm-BE-TSM"/>
                                             <outlet property="cellCartProductName" destination="ECa-nq-ZWN" id="4gx-Km-fl7"/>
                                             <outlet property="cellCartProductPrice" destination="LkD-cX-1ZP" id="I7K-AD-P1n"/>
+                                            <outlet property="recommendedOrNotRecommendedProductImage" destination="Mmx-ah-0cN" id="yau-WR-v8r"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -102,6 +107,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Image-2" width="225" height="225"/>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

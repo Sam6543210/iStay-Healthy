@@ -6,10 +6,10 @@
 //
 
 import UIKit
-
+var cartProducts = [MyCart]()
 class CartViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    var cartProducts:[Product]? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,19 +29,46 @@ class CartViewController: UIViewController {
 
 
 }
-/*
+
 extension CartViewController: UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       // return cartProducts!.count
+       
+        return cartProducts.count
+        
+           
+        
+    }
+    func compare(product:MyCart) -> (mesage:String,result:Bool)
+    {
+        return ("More sugar Content",false)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       // let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CartTableViewCell
-      //  cell.cellCartProductPrice = UIImage(
-        return nil
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CartTableViewCell
+       
+        cell.cellCartProductPrice.text = "Rs. \(cartProducts[indexPath.row].price)"
+        cell.cellCartProductName.text = cartProducts[indexPath.row].productName
+        cell.cellCartProductImage.image = UIImage(named:(cartProducts[indexPath.row].productImage))
+        let (message,result) = compare(product:cartProducts[indexPath.row])
+        if(result)
+        {
+            cell.recommendedOrNotRecommendedProductImage.image = UIImage(named:"approval")
+            cell.layer.cornerRadius = 10
+            cell.layer.borderColor = UIColor.green.cgColor
+            cell.layer.borderWidth = 2
+            
+        }
+        else{
+            cell.recommendedOrNotRecommendedProductImage.image = UIImage(named:"disapproval")
+            cell.layer.cornerRadius = 10
+            cell.layer.borderColor = UIColor.red.cgColor
+            cell.layer.borderWidth = 2
+            //toast message on hover 
+        }
+        return cell
     }
- */
+ 
     
     
-//}
+}

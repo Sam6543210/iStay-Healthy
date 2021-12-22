@@ -9,7 +9,7 @@ import UIKit
 
 class ProductViewController: UIViewController {
     
-
+    var cartItem:Product? = nil
     @IBOutlet weak var tableView: UITableView!
     
    
@@ -48,12 +48,41 @@ extension ProductViewController: UITableViewDelegate,UITableViewDataSource
         cell.cellProductName.text = product.productName
         cell.cellProductImage.image = UIImage(named: product.productImage!)
         cell.cellProductPrice.text = "Rs. \(product.productPrice)"
-      
+        cell.addToCartButton.tag = indexPath.row
+        cell.addToCartButton.addTarget(self, action: #selector(addToButton(sender:)), for: .touchUpInside)
         cell.layer.cornerRadius = 10
         cell.layer.borderColor = UIColor.purple.cgColor
         cell.layer.borderWidth = 2
  
         return cell
+    }
+   
+    @objc func addToButton(sender:UIButton)
+    {
+        let indexpath1 = IndexPath(row:sender.tag,section:0)
+       // print(self.products![indexpath1.row].productName)
+       cartItem = self.products![indexpath1.row]
+        let cartImage:String = cartItem!.productImage ?? ""
+       let cartName:String = cartItem!.productName ?? ""
+        let cartPrice:Int64 = cartItem!.productPrice
+        let cartFatContent:NSDecimalNumber = cartItem!.fatContent ?? 0.0
+        let cartSugarContent:NSDecimalNumber = cartItem!.sugarContent ?? 0.0
+        let cartSodium:NSDecimalNumber = cartItem!.sodium ?? 0.0
+        let cartAllergnInformation1:String = cartItem!.allergenInformation1 ?? ""
+        let cartAllergnInformation2:String = cartItem!.allergenInformation2 ?? ""
+        let cartBrand:String = cartItem!.brand ?? ""
+        let cartAddedFlavour:String = cartItem!.addedFlavour ?? ""
+        let cartEnergy:Int64 = cartItem!.energy
+        let cartStartingAge:Int64 = cartItem!.startingAge
+        let cartEndingAge:Int64 = cartItem!.endingAge
+        
+        let id:UUID = cartItem!.id
+        let t = MyCart(pName: cartName, pImage: cartImage, pBrand: cartBrand, pAddedFlavour: cartAddedFlavour, pAllergenInformation1: cartAllergnInformation1, pAllergenInformation2: cartAllergnInformation2, pSugarContent: cartSugarContent, pSodium: cartSodium, pFatContent: cartFatContent, pPrice: cartPrice, pStartingAge: cartStartingAge, pEndingAge: cartEndingAge, pEnergy: cartEnergy, id1: id)
+       // print(cartProducts?[0].brand)
+        cartProducts.append(t)
+        
+        let cart = self.storyboard?.instantiateViewController(withIdentifier:"cartId") as! CartViewController
+        self.navigationController?.pushViewController(cart,animated: true)
     }
    
     

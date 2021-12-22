@@ -113,7 +113,7 @@
         <!--Cart-->
         <scene sceneID="WBB-qO-ZHh">
             <objects>
-                <viewControllerPlaceholder storyboardName="Cart" id="Tny-g0-890" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="cartId" storyboardName="Cart" id="Tny-g0-890" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="UOw-xr-Nq5"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CLV-y2-QtZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
