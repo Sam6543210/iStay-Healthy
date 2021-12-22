@@ -20,6 +20,12 @@ class HealthDetails_ViewController: UIViewController {
     @IBOutlet weak var cholesterolLabel: UILabel!
     @IBOutlet weak var bloodPressureLabel: UILabel!
     @IBOutlet weak var diabetesLabel: UILabel!
+    @IBOutlet weak var heightLabel: UILabel!
+    @IBOutlet weak var weightLabel: UILabel!
+    @IBOutlet weak var sodiumLabel: UILabel!
+    
+    var bmiHeight = 0.0
+    var bmiWeight = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +53,6 @@ class HealthDetails_ViewController: UIViewController {
         dateOfBirthLabel.text = String("\(birthDay!.day!)-\(birthDay!.month!)-\(birthDay!.year!)")
         
     }
-    
     func authorizeHealthKit(){
         
         let healthkitTypesToRead : Set<HKObjectType> = [
@@ -140,6 +145,7 @@ class HealthDetails_ViewController: UIViewController {
     
     func displayHealthData(){
         
+        
         guard let bloodPressureSampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bloodPressureSystolic) else{
         print("Systolic Blood Pressure sample is no longer available in healthkit")
         return
@@ -175,7 +181,7 @@ class HealthDetails_ViewController: UIViewController {
             self.bloodPressureLabel.text = String(sample.quantity.doubleValue(for: HKUnit(from: "mmHg")))
             self.bloodPressureLabel.text?.append(" mmHg")
         }
-       /* readSampleHealthData(for: weightSampleType){
+        readSampleHealthData(for: weightSampleType){
             (sample, error) in
             guard let sample = sample else {
                 if let error = error {
@@ -185,8 +191,12 @@ class HealthDetails_ViewController: UIViewController {
             }
             self.weightLabel.text = String(sample.quantity.doubleValue(for: HKUnit(from: "kg")))
             self.weightLabel.text?.append(" kg")
-        }*/
-       /* readSampleHealthData(for: heightSampleType){
+            self.bmiWeight = sample.quantity.doubleValue(for: HKUnit(from: "kg"))
+            if(self.bmiHeight != 0){
+                self.displayBMI()
+            }
+        }
+        readSampleHealthData(for: heightSampleType){
             (sample, error) in
             guard let sample = sample else {
                 if let error = error {
@@ -196,7 +206,12 @@ class HealthDetails_ViewController: UIViewController {
             }
             self.heightLabel.text = String(sample.quantity.doubleValue(for: HKUnit(from: "ft")))
             self.heightLabel.text?.append(" ft")
-        }*/
+            self.bmiHeight = sample.quantity.doubleValue(for: HKUnit(from: "ft"))
+            if(self.bmiWeight != 0){
+                self.displayBMI()
+            }
+           
+        }
         readSampleHealthData(for: cholesterolSampleType){
             (sample, error) in
             guard let sample = sample else {
@@ -219,7 +234,7 @@ class HealthDetails_ViewController: UIViewController {
             self.diabetesLabel.text = String(sample.quantity.doubleValue(for: HKUnit(from: "mg")))
             self.diabetesLabel.text?.append(" mg/dL")
         }
-       /* readSampleHealthData(for: sodiumSampleType){
+        readSampleHealthData(for: sodiumSampleType){
             (sample, error) in
             guard let sample = sample else {
                 if let error = error {
@@ -229,7 +244,14 @@ class HealthDetails_ViewController: UIViewController {
             }
             self.sodiumLabel.text = String(sample.quantity.doubleValue(for: HKUnit(from: "mg")))
             self.sodiumLabel.text?.append(" mg/dL")
-        }*/
+        }
+        
+    }
+    func displayBMI(){
+        self.bmiHeight = self.bmiHeight * 0.3048
+        self.bmiHeight = self.bmiHeight * self.bmiHeight
+        let bmi = bmiWeight/bmiHeight
+        bmiLabel.text = "\(bmi) kg/m2"
     }
     private func dislayAlert(for error : Error){
         let alert = UIAlertController(title: nil, message: error.localizedDescription, preferredStyle: .alert)

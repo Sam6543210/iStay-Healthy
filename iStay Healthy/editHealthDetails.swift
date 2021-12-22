@@ -11,22 +11,24 @@ import  HealthKit
 class editHealthDetails: UIViewController {
 
     @IBOutlet weak var bloodPressureField: UITextField!
-    @IBOutlet weak var saveHealthData: UIBarButtonItem!
     
+    @IBAction func saveHealth(_ sender: Any) {
+        writeToKit()
+       // bloodPressureField.text = ""
+        dismiss(animated: true, completion: nil)
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    @IBAction func saveHealthData(_ sender: Any) {
-        writeToKit()
-        bloodPressureField.text = ""
-        
-    }
+    
     func writeToKit(){
         let today = NSDate()
         if (bloodPressureField.text != "" ){
+            print("inside if loop")
             let bloodPressure = bloodPressureField.text
             if let type = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bloodPressureSystolic){
                 let quantity = HKQuantity(unit: HKUnit.millimeterOfMercury(), doubleValue: Double(bloodPressure!)!)
