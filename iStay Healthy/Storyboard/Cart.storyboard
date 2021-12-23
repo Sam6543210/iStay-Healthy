@@ -51,16 +51,25 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-2" translatesAutoresizingMaskIntoConstraints="NO" id="Mmx-ah-0cN">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="disapproval" translatesAutoresizingMaskIntoConstraints="NO" id="Mmx-ah-0cN">
                                                     <rect key="frame" x="0.0" y="11" width="65" height="104"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
+                                                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="information1" translatesAutoresizingMaskIntoConstraints="NO" id="neI-cz-O92">
+                                                    <rect key="frame" x="357" y="11" width="52" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="32" id="5zb-Iw-N7k"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="neI-cz-O92" firstAttribute="leading" secondItem="Qc4-kb-u1G" secondAttribute="trailing" constant="25" id="7Rr-VC-jA2"/>
                                                 <constraint firstItem="ECa-nq-ZWN" firstAttribute="top" secondItem="Qc4-kb-u1G" secondAttribute="bottom" constant="22" id="DlN-ET-Vaa"/>
                                                 <constraint firstItem="Qc4-kb-u1G" firstAttribute="top" secondItem="BzB-tF-v9D" secondAttribute="topMargin" constant="10" id="LGk-zp-yP9"/>
                                                 <constraint firstItem="ECa-nq-ZWN" firstAttribute="leading" secondItem="BzB-tF-v9D" secondAttribute="leadingMargin" constant="20" id="LR8-4f-Vuh"/>
+                                                <constraint firstItem="neI-cz-O92" firstAttribute="top" secondItem="BzB-tF-v9D" secondAttribute="top" constant="11" id="MsT-I0-aFw"/>
                                                 <constraint firstItem="LkD-cX-1ZP" firstAttribute="leading" secondItem="BzB-tF-v9D" secondAttribute="leadingMargin" constant="15" id="RwQ-eb-e2m"/>
+                                                <constraint firstAttribute="trailing" secondItem="neI-cz-O92" secondAttribute="trailing" constant="5" id="Sav-eW-N60"/>
                                                 <constraint firstItem="LkD-cX-1ZP" firstAttribute="top" secondItem="ECa-nq-ZWN" secondAttribute="bottom" constant="10" id="StF-RF-xb1"/>
                                                 <constraint firstItem="ECa-nq-ZWN" firstAttribute="trailing" secondItem="BzB-tF-v9D" secondAttribute="trailingMargin" constant="20" id="aHi-7v-V1z"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Qc4-kb-u1G" secondAttribute="trailing" constant="62" id="dOl-4T-qHa"/>
@@ -73,6 +82,7 @@
                                             <outlet property="cellCartProductImage" destination="Qc4-kb-u1G" id="6Fm-BE-TSM"/>
                                             <outlet property="cellCartProductName" destination="ECa-nq-ZWN" id="4gx-Km-fl7"/>
                                             <outlet property="cellCartProductPrice" destination="LkD-cX-1ZP" id="I7K-AD-P1n"/>
+                                            <outlet property="informationImage" destination="neI-cz-O92" id="91A-7K-W24"/>
                                             <outlet property="recommendedOrNotRecommendedProductImage" destination="Mmx-ah-0cN" id="yau-WR-v8r"/>
                                         </connections>
                                     </tableViewCell>
@@ -107,8 +117,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image-2" width="225" height="225"/>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
+        <image name="disapproval" width="225" height="225"/>
+        <image name="information1" width="217" height="233"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

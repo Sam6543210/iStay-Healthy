@@ -49,9 +49,6 @@
                                                     <state key="normal" title="Add To Cart" image="cart.fill" catalog="system">
                                                         <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
                                                     </state>
-                                                    <connections>
-                                                        <segue destination="Tny-g0-890" kind="show" id="HS6-XI-EyK"/>
-                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Rs 350" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="viN-yF-5uq">
                                                     <rect key="frame" x="40" y="269" width="64" height="25"/>

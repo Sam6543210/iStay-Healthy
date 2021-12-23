@@ -9,7 +9,15 @@ import UIKit
 
 class CartTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var informationImage: UIImageView!
+    {
+        didSet
+        {
+            informationImage.isUserInteractionEnabled = true
+        }
+    }
     @IBOutlet weak var recommendedOrNotRecommendedProductImage: UIImageView!
+    
     @IBOutlet weak var cellCartProductPrice: UILabel!
     @IBOutlet weak var cellCartProductName: UILabel!
     @IBOutlet weak var cellCartProductImage: UIImageView!

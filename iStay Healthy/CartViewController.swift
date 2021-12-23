@@ -7,6 +7,7 @@
 
 import UIKit
 var cartProducts = [MyCart]()
+
 class CartViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
@@ -17,16 +18,7 @@ class CartViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+   
 
 }
 
@@ -41,8 +33,13 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource
     }
     func compare(product:MyCart) -> (mesage:String,result:Bool)
     {
-        return ("More sugar Content",false)
+        let sugar = Int(product.sugarContent)
+        
+        
+            return("High Sugar content",false)
+        
     }
+  
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CartTableViewCell
@@ -50,13 +47,18 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource
         cell.cellCartProductPrice.text = "Rs. \(cartProducts[indexPath.row].price)"
         cell.cellCartProductName.text = cartProducts[indexPath.row].productName
         cell.cellCartProductImage.image = UIImage(named:(cartProducts[indexPath.row].productImage))
-        let (message,result) = compare(product:cartProducts[indexPath.row])
+        
+       let  (message,result) = compare(product:cartProducts[indexPath.row])
+        
         if(result)
         {
             cell.recommendedOrNotRecommendedProductImage.image = UIImage(named:"approval")
             cell.layer.cornerRadius = 10
             cell.layer.borderColor = UIColor.green.cgColor
             cell.layer.borderWidth = 2
+            let hover = CustomTapGestureRecognizer(target: self, action: #selector(self.onTap(sender:)))
+            hover.ourCustomValue = message
+            cell.informationImage.addGestureRecognizer(hover)
             
         }
         else{
@@ -64,11 +66,38 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource
             cell.layer.cornerRadius = 10
             cell.layer.borderColor = UIColor.red.cgColor
             cell.layer.borderWidth = 2
-            //toast message on hover 
+            //toast message on tap
+            
+            let hover = CustomTapGestureRecognizer(target: self, action: #selector(self.onTap(sender:)))
+            hover.ourCustomValue = message
+            cell.informationImage.addGestureRecognizer(hover)
+  
+            
         }
         return cell
     }
  
+   
+    @objc
+    func onTap(sender:CustomTapGestureRecognizer)
+    {
+        showToast(controller:self,message:sender.ourCustomValue,seconds:2)
+    }
+    func showToast(controller:CartViewController, message:String,seconds:Double)
+    {
+        let alert = UIAlertController(title:nil,message:message,preferredStyle:.alert)
+        alert.view.backgroundColor = UIColor.black
+        alert.view.alpha = 0.6
+        alert.view.layer.cornerRadius = 15
+        controller.present(alert,animated: true)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2)
+        {
+            alert.dismiss(animated: true)
+        }
+    }
     
-    
+}
+class CustomTapGestureRecognizer:UITapGestureRecognizer
+{
+    var ourCustomValue: String = ""
 }

@@ -80,9 +80,23 @@ extension ProductViewController: UITableViewDelegate,UITableViewDataSource
         let t = MyCart(pName: cartName, pImage: cartImage, pBrand: cartBrand, pAddedFlavour: cartAddedFlavour, pAllergenInformation1: cartAllergnInformation1, pAllergenInformation2: cartAllergnInformation2, pSugarContent: cartSugarContent, pSodium: cartSodium, pFatContent: cartFatContent, pPrice: cartPrice, pStartingAge: cartStartingAge, pEndingAge: cartEndingAge, pEnergy: cartEnergy, id1: id)
        // print(cartProducts?[0].brand)
         cartProducts.append(t)
-        
-        let cart = self.storyboard?.instantiateViewController(withIdentifier:"cartId") as! CartViewController
-        self.navigationController?.pushViewController(cart,animated: true)
+        showToast(controller:self,message:"Product added to cart",seconds:2)
+      /*  let cart = self.storyboard?.instantiateViewController(withIdentifier:"cartId") as! CartViewController
+        self.navigationController?.pushViewController(cart,animated: true)*/
+    }
+    func showToast(controller:ProductViewController, message:String,seconds:Double)
+    {
+        let alert = UIAlertController(title:nil,message:message,preferredStyle:.alert)
+        alert.view.backgroundColor = UIColor.gray
+        alert.view.alpha = 0.6
+        alert.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor.white
+      //  alert.view.tintColor = UIColor.gray
+        alert.view.layer.cornerRadius = 15
+        controller.present(alert,animated: true)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2)
+        {
+            alert.dismiss(animated: true)
+        }
     }
    
     
