@@ -391,6 +391,7 @@
 				CODE_SIGN_ENTITLEMENTS = "iStay Healthy/iStay Healthy.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "iStay Healthy/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -410,6 +411,7 @@
 				CODE_SIGN_ENTITLEMENTS = "iStay Healthy/iStay Healthy.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "iStay Healthy/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
