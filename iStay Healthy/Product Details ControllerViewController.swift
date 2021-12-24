@@ -35,6 +35,17 @@ class Product_Details_ControllerViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    private let manager = ProductManager()
+    @IBAction func deleteTap(_ sender: Any) {
+        if(manager.deleteProduct(id: selectedProduct!.id))
+        {
+            print("deleted")
+        }
+        else
+        {
+            print("Not deleted")
+        }
+    }
     func setUpProductDetail()
     {
         self.passedProductImge.image = UIImage(named:(selectedProduct?.productImage)!)

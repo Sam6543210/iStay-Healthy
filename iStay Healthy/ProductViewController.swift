@@ -18,11 +18,11 @@ class ProductViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-       // fillData()
+      //  fillData()
     }
     func fillData()
     {
-        let product1 = Product(productName: "Ferrero Rocher (300g)", productImage: "product4", brand: "Ferrero", addedFlavour: "Vanillin", allergenInformation1: "Hazelnuts", allergenInformation2: "Gluten", sugarContent: 39.9, sodium: 8, fatContent: 42.7, startingAge: 10, endingAge: 40, energy: 595, productPrice: 845, productDescription: "Ferrero Rocher is a chocolate made of whole roasted hazelnut encased in a thin wafer shell filled with cream", id: UUID())
+        let product1 = Product(productName: "Instant Oat Meal Cups (50g)", productImage: "product3", brand: "Quaker", addedFlavour: "No", allergenInformation1: "Almond", allergenInformation2: "Soy", sugarContent: 10, sodium: 0.18, fatContent: 4, startingAge: 15, endingAge: 70, energy: 465, productPrice: 100, productDescription: "The sweet and nutty flavour of Instant Quaker OatMeal Honey & almonds cups are about to make your morning easier", id: UUID())
         manager.createProduct(product: product1)
        
     }
