@@ -15,9 +15,12 @@ class CartViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        tableView.reloadData()
     }
     
-
+    override func viewDidAppear(_ animated: Bool) {
+        self.tableView.reloadData()
+    }
    
 
 }

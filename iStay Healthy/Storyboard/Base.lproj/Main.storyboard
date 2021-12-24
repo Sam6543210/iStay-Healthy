@@ -59,7 +59,7 @@
         <!--Cart-->
         <scene sceneID="sG6-Qq-95m">
             <objects>
-                <viewControllerPlaceholder storyboardName="Cart" id="VYy-7N-5P4" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="cartId" storyboardName="Cart" id="VYy-7N-5P4" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="W4L-Ds-Nqb"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jKo-Mb-Wpv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

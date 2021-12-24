@@ -81,6 +81,7 @@ extension ProductViewController: UITableViewDelegate,UITableViewDataSource
        // print(cartProducts?[0].brand)
         cartProducts.append(t)
         showToast(controller:self,message:"Product added to cart",seconds:2)
+        
       /*  let cart = self.storyboard?.instantiateViewController(withIdentifier:"cartId") as! CartViewController
         self.navigationController?.pushViewController(cart,animated: true)*/
     }
@@ -89,7 +90,7 @@ extension ProductViewController: UITableViewDelegate,UITableViewDataSource
         let alert = UIAlertController(title:nil,message:message,preferredStyle:.alert)
         alert.view.backgroundColor = UIColor.gray
         alert.view.alpha = 0.6
-        alert.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor.white
+        alert.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor.green
       //  alert.view.tintColor = UIColor.gray
         alert.view.layer.cornerRadius = 15
         controller.present(alert,animated: true)
