@@ -15,12 +15,16 @@ class Product_Details_ControllerViewController: UIViewController {
     @IBOutlet weak var passedProductImge: UIImageView!
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var productPriceLabel: UILabel!
-    @IBOutlet weak var poductDescriptionLabel: UILabel!
+    @IBOutlet weak var ageGrpLabel: UILabel!
+    @IBOutlet weak var productDescriptionText: UITextView!
+    @IBOutlet weak var textHC: NSLayoutConstraint!
     @IBOutlet weak var productEnergyLabel: UILabel!
     @IBOutlet weak var productFatLabel: UILabel!
     @IBOutlet weak var productSodiumLabel: UILabel!
     @IBOutlet weak var productSugarLabel: UILabel!
-    @IBOutlet weak var ageGrpLabel: UILabel!
+    @IBOutlet weak var allergenLabel: UILabel!
+    @IBOutlet weak var artificialFlavoursLabel: UILabel!
+    
     
     @IBOutlet weak var addToCartButton: UIButton!
     @IBAction func addToCartAction(_ sender: Any) {
@@ -54,13 +58,19 @@ class Product_Details_ControllerViewController: UIViewController {
         self.productPriceLabel.text?.append("\(String(selectedProduct!.productPrice))")
         self.ageGrpLabel.text?.append("\(String(selectedProduct!.startingAge))-\(String(selectedProduct!.endingAge)))")
         self.ageGrpLabel.frame = CGRect(x: 200, y: 380, width: self.ageGrpLabel.intrinsicContentSize.width, height: self.ageGrpLabel.intrinsicContentSize.height)
-        self.poductDescriptionLabel.text?.append("\(String((selectedProduct?.productDescription)!))")
-        self.poductDescriptionLabel.frame = CGRect(x: 20, y: 410, width: self.poductDescriptionLabel.intrinsicContentSize.width, height: self.poductDescriptionLabel.intrinsicContentSize.height)
+        self.productDescriptionText.text.append("\(String((selectedProduct?.productDescription)!))")
+        self.textHC.constant = self.productDescriptionText.contentSize.height
         self.productEnergyLabel.text = "\(String(describing: (selectedProduct?.energy)!))"
         self.productFatLabel.text = "\(String(describing: (selectedProduct?.fatContent)!))"
         self.productSugarLabel.text = "\(String(describing: (selectedProduct?.sugarContent)!))"
         self.productSodiumLabel.text = "\(String(describing: (selectedProduct?.sodium)!))"
-        
+        self.allergenLabel.text = "\(String(describing: (selectedProduct?.allergenInformation1)!)), \(String(describing: (selectedProduct?.allergenInformation2)!))"
+        if(selectedProduct?.addedFlavour == "Yes"){
+            self.artificialFlavoursLabel.text = "Contains artificial flavours"
+        }
+        else{
+            self.artificialFlavoursLabel.text = "Does not contain artificial flavours"
+        }
     }
     
     private func dislayAlert(for error : Error){
