@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H1419" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="20D64" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CDAllergy" representedClassName="CDAllergy" syncable="YES">
+        <attribute name="allergyId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="allergyName" optional="YES" attributeType="String"/>
+        <attribute name="allergyStatus" optional="YES" attributeType="String"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="allergyId"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
     <entity name="CDProduct" representedClassName="CDProduct" syncable="YES">
         <attribute name="addedFlavour" optional="YES" attributeType="String"/>
         <attribute name="allergenInformation1" optional="YES" attributeType="String"/>
@@ -24,5 +34,6 @@
     </entity>
     <elements>
         <element name="CDProduct" positionX="-45" positionY="0" width="128" height="268"/>
+        <element name="CDAllergy" positionX="-45" positionY="117" width="128" height="74"/>
     </elements>
 </model>

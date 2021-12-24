@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8482248027759A6F00608AD9 /* CDAllergy+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8482247E27759A6F00608AD9 /* CDAllergy+CoreDataClass.swift */; };
+		8482248127759A6F00608AD9 /* CDAllergy+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8482247F27759A6F00608AD9 /* CDAllergy+CoreDataProperties.swift */; };
 		848F5AA72757763600C17962 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F5AA62757763600C17962 /* AppDelegate.swift */; };
 		848F5AA92757763600C17962 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F5AA82757763600C17962 /* SceneDelegate.swift */; };
 		848F5AAB2757763600C17962 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F5AAA2757763600C17962 /* ProductViewController.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8482247E27759A6F00608AD9 /* CDAllergy+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CDAllergy+CoreDataClass.swift"; path = "iStay Healthy/CDAllergy+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8482247F27759A6F00608AD9 /* CDAllergy+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CDAllergy+CoreDataProperties.swift"; path = "iStay Healthy/CDAllergy+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		848F5AA32757763600C17962 /* iStay Healthy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iStay Healthy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		848F5AA62757763600C17962 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		848F5AA82757763600C17962 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +84,8 @@
 		848F5A9A2757763600C17962 = {
 			isa = PBXGroup;
 			children = (
+				8482247E27759A6F00608AD9 /* CDAllergy+CoreDataClass.swift */,
+				8482247F27759A6F00608AD9 /* CDAllergy+CoreDataProperties.swift */,
 				848F5AE327632AD600C17962 /* CDProduct+CoreDataClass.swift */,
 				848F5AE427632AD600C17962 /* CDProduct+CoreDataProperties.swift */,
 				848F5AA52757763600C17962 /* iStay Healthy */,
@@ -225,7 +231,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8482248127759A6F00608AD9 /* CDAllergy+CoreDataProperties.swift in Sources */,
 				848F5AED276350E100C17962 /* PersistentStorage.swift in Sources */,
+				8482248027759A6F00608AD9 /* CDAllergy+CoreDataClass.swift in Sources */,
 				848F5AB12757763600C17962 /* HealthKit.xcdatamodeld in Sources */,
 				848F5B012771CB2F00C17962 /* CartViewController.swift in Sources */,
 				848F5AD72760AF8F00C17962 /* ProductDataRepository.swift in Sources */,
