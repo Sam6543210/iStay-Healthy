@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		8482248027759A6F00608AD9 /* CDAllergy+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8482247E27759A6F00608AD9 /* CDAllergy+CoreDataClass.swift */; };
 		8482248127759A6F00608AD9 /* CDAllergy+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8482247F27759A6F00608AD9 /* CDAllergy+CoreDataProperties.swift */; };
+		848224852775A03100608AD9 /* Allergy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848224842775A03100608AD9 /* Allergy.swift */; };
+		848224882775A19B00608AD9 /* AllergyDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848224872775A19B00608AD9 /* AllergyDataRepository.swift */; };
+		8482248B2775A46700608AD9 /* AllergyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8482248A2775A46700608AD9 /* AllergyManager.swift */; };
 		848F5AA72757763600C17962 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F5AA62757763600C17962 /* AppDelegate.swift */; };
 		848F5AA92757763600C17962 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F5AA82757763600C17962 /* SceneDelegate.swift */; };
 		848F5AAB2757763600C17962 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F5AAA2757763600C17962 /* ProductViewController.swift */; };
@@ -39,6 +42,9 @@
 /* Begin PBXFileReference section */
 		8482247E27759A6F00608AD9 /* CDAllergy+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CDAllergy+CoreDataClass.swift"; path = "iStay Healthy/CDAllergy+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8482247F27759A6F00608AD9 /* CDAllergy+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CDAllergy+CoreDataProperties.swift"; path = "iStay Healthy/CDAllergy+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		848224842775A03100608AD9 /* Allergy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allergy.swift; sourceTree = "<group>"; };
+		848224872775A19B00608AD9 /* AllergyDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergyDataRepository.swift; sourceTree = "<group>"; };
+		8482248A2775A46700608AD9 /* AllergyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergyManager.swift; sourceTree = "<group>"; };
 		848F5AA32757763600C17962 /* iStay Healthy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iStay Healthy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		848F5AA62757763600C17962 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		848F5AA82757763600C17962 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +130,7 @@
 				848F5B382773083C00C17962 /* MyCart.swift */,
 				848F5B0A2771FF1900C17962 /* CartTableViewCell.swift */,
 				848F5B0D277283D300C17962 /* editHealthDetails.swift */,
+				848224842775A03100608AD9 /* Allergy.swift */,
 			);
 			path = "iStay Healthy";
 			sourceTree = "<group>";
@@ -141,6 +148,8 @@
 			children = (
 				848F5AD62760AF8F00C17962 /* ProductDataRepository.swift */,
 				848F5ADA2760B6BC00C17962 /* ProductManager.swift */,
+				848224872775A19B00608AD9 /* AllergyDataRepository.swift */,
+				8482248A2775A46700608AD9 /* AllergyManager.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -237,6 +246,7 @@
 				848F5AB12757763600C17962 /* HealthKit.xcdatamodeld in Sources */,
 				848F5B012771CB2F00C17962 /* CartViewController.swift in Sources */,
 				848F5AD72760AF8F00C17962 /* ProductDataRepository.swift in Sources */,
+				848224882775A19B00608AD9 /* AllergyDataRepository.swift in Sources */,
 				848F5B0E277283D300C17962 /* editHealthDetails.swift in Sources */,
 				848F5B392773083C00C17962 /* MyCart.swift in Sources */,
 				848F5AE527632AD600C17962 /* CDProduct+CoreDataClass.swift in Sources */,
@@ -247,8 +257,10 @@
 				848F5AA72757763600C17962 /* AppDelegate.swift in Sources */,
 				848F5AC42758C05D00C17962 /* ViewProductTableViewCell.swift in Sources */,
 				848F5AA92757763600C17962 /* SceneDelegate.swift in Sources */,
+				848224852775A03100608AD9 /* Allergy.swift in Sources */,
 				848F5B0B2771FF1900C17962 /* CartTableViewCell.swift in Sources */,
 				848F5AE627632AD600C17962 /* CDProduct+CoreDataProperties.swift in Sources */,
+				8482248B2775A46700608AD9 /* AllergyManager.swift in Sources */,
 				848F5AC7275A42CA00C17962 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
