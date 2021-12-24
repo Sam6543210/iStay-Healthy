@@ -9,4 +9,6 @@ import Foundation
 struct  Allergy {
     var allergyName,allergyStatus: String?
     let allergyId: UUID
+
+
 }

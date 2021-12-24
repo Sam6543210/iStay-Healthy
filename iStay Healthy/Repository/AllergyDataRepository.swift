@@ -19,5 +19,7 @@ struct AllergyDataRepository: AllergyRepository
         cdAllergy.allergyStatus = allergy.allergyStatus
         cdAllergy.allergyId = allergy.allergyId
         PersistentStorage.shared.saveContext()
+   
+    
     }
 }
