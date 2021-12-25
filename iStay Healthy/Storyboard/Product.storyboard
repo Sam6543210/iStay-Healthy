@@ -257,6 +257,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qwe-ZN-6hu">
+                                <rect key="frame" x="158" y="672" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="allergicLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MwJ-kw-HfS">
                                 <rect key="frame" x="203" y="631" width="191" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -291,6 +298,7 @@
                         <outlet property="productPriceLabel" destination="n9V-D6-QP9" id="sZF-TI-xii"/>
                         <outlet property="productSodiumLabel" destination="qVO-4N-so0" id="Q4i-5i-0f1"/>
                         <outlet property="productSugarLabel" destination="pI9-kO-zgg" id="JuL-6X-3eF"/>
+                        <outlet property="sampleLabel" destination="Qwe-ZN-6hu" id="SJ3-Ko-F1Z"/>
                         <outlet property="textHC" destination="rGE-NG-Gv5" id="vJg-sa-WJg"/>
                     </connections>
                 </viewController>

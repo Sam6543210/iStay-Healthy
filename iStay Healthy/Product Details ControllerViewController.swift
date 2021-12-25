@@ -25,10 +25,16 @@ class Product_Details_ControllerViewController: UIViewController {
     @IBOutlet weak var allergenLabel: UILabel!
     @IBOutlet weak var artificialFlavoursLabel: UILabel!
     
+    @IBOutlet weak var sampleLabel: UILabel!
     
     @IBOutlet weak var addToCartButton: UIButton!
     @IBAction func addToCartAction(_ sender: Any) {
     }
+    
+    var age:Int?
+    var gender:String?
+    var bloodPressure:Double = 0.0
+        var weight,height,cholesterol,sugar,sodium:Double?
     
     var selectedProduct: Product? = nil
     let healthDetails = HealthDetails_ViewController.init()
@@ -36,7 +42,7 @@ class Product_Details_ControllerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpProductDetail()
-        
+        compareData()
         // Do any additional setup after loading the view.
     }
     private let manager = ProductManager()
@@ -78,6 +84,113 @@ class Product_Details_ControllerViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "O.K.", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
-    
+    func readSampleHealthData(for sampleType : HKSampleType, completion : @escaping (HKQuantitySample?, Error?) -> Swift.Void){
+        
+        let mostRecentPredicate = HKQuery.predicateForSamples(withStart: Date.distantPast, end: Date(), options: .strictEndDate)
+        let sortDiscriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
+        let limit = 1
+        
+       /* let sampleQuery = HKSampleQuery(sampleType: sampleType, predicate: mostRecentPredicate, limit: limit, sortDescriptors: [sortDiscriptor]){
+            (query, samples, error) in
+            DispatchQueue.main.async{
+                guard let samples = samples,
+                      let mostRecentSample = samples.first as? HKQuantitySample else{
+                          completion(nil,error)
+                          return
+                          }
+                completion(mostRecentSample,nil)
+            }
+        }*/
+        
+        let sampleQuery = HKSampleQuery(sampleType: sampleType, predicate: mostRecentPredicate, limit: limit, sortDescriptors: [sortDiscriptor]){
+            (query, samples, error) in
+            
+            let samples = samples
+            let mostRecentSample = samples?.first as? HKQuantitySample
+                completion(mostRecentSample,nil)
+            
+        }
+        
+        HKHealthStore().execute(sampleQuery)
+    }
+    func getHealthData(completion :() -> Void){
+        age = healthDetails.readCharacteristicHealthData().age
+        gender = healthDetails.readCharacteristicHealthData().gender
+        
+        self.readSampleHealthData(for: HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bloodPressureSystolic)!){
+            (sample, error) in
+            guard let sample = sample else {
+                if let error = error {
+                    self.dislayAlert(for: error)
+                }
+                return
+            }
+            self.sampleLabel.text = "\(sample.quantity.doubleValue(for: HKUnit(from: "mmHg")))"
+            self.bloodPressure = sample.quantity.doubleValue(for: HKUnit(from: "mmHg"))
+        }
+        self.readSampleHealthData(for: HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass)!){
+            (sample, error) in
+            guard let sample = sample else {
+                if let error = error {
+                    self.dislayAlert(for: error)
+                }
+                return
+            }
+            self.weight = sample.quantity.doubleValue(for: HKUnit(from: "kg"))
+        }
+        self.readSampleHealthData(for: HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.height)!){
+            (sample, error) in
+            guard let sample = sample else {
+                if let error = error {
+                    self.dislayAlert(for: error)
+                }
+                return
+            }
+            self.height = sample.quantity.doubleValue(for: HKUnit(from: "ft"))
+        }
+        self.readSampleHealthData(for: HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryCholesterol)!){
+            (sample, error) in
+            guard let sample = sample else {
+                if let error = error {
+                    self.dislayAlert(for: error)
+                }
+                return
+            }
+            self.cholesterol = sample.quantity.doubleValue(for: HKUnit(from: "mg"))
+        }
+        healthDetails.readSampleHealthData(for: HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietarySugar)!){
+            (sample, error) in
+            guard let sample = sample else {
+                if let error = error {
+                    self.dislayAlert(for: error)
+                }
+                return
+            }
+            self.sugar = sample.quantity.doubleValue(for: HKUnit(from: "mg"))
+        }
+        healthDetails.readSampleHealthData(for: HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietarySodium)!){
+            (sample, error) in
+            guard let sample = sample else {
+                if let error = error {
+                    self.dislayAlert(for: error)
+                }
+                return
+            }
+            self.sodium = sample.quantity.doubleValue(for: HKUnit(from: "mg"))
+            print("inside sodium method")
+        }
+        completion()
+    }
+    func printingg(){
+        print("age:\(String(describing: (age)!)), gender:\(gender!),")
+        print("BP:\(String(describing: self.bloodPressure)), weight:\(String(describing: weight)), height:\(String(describing: height)), cholest:\(String(describing: cholesterol)), sugar:\(String(describing: sugar)), sodium:\(String(describing: sodium))")
+    }
+    func compareData(){
+       
+        self.getHealthData(completion: {
+            self.printingg()
+        })
+        
+    }
     
 }
