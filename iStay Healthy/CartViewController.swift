@@ -80,7 +80,12 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource
         return cell
     }
  
-   
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        tableView.beginUpdates()
+        cartProducts.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .fade)
+        tableView.endUpdates()
+    }
     @objc
     func onTap(sender:CustomTapGestureRecognizer)
     {
