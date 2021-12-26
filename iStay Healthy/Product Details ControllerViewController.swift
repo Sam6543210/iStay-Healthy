@@ -25,8 +25,15 @@ class Product_Details_ControllerViewController: UIViewController {
     @IBOutlet weak var allergenLabel: UILabel!
     @IBOutlet weak var artificialFlavoursLabel: UILabel!
     
-    @IBOutlet weak var sampleLabel: UILabel!
-    
+    @IBOutlet weak var resultImage: UIImageView!
+    @IBOutlet weak var resultLabel: UILabel!
+    @IBAction func infoAction(_ sender: Any) {
+        let alert = UIAlertController(title: "", message: "reasons", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "O.K.", style: .cancel, handler: { (action) in
+            print("pressed O.K")
+        }))
+        present(alert,animated: true)
+    }
     @IBOutlet weak var addToCartButton: UIButton!
     @IBAction func addToCartAction(_ sender: Any) {
     }
@@ -115,7 +122,6 @@ class Product_Details_ControllerViewController: UIViewController {
                 }
                 return
             }
-            self.sampleLabel.text = "\(sample.quantity.doubleValue(for: HKUnit(from: "mmHg")))"
             self.bloodPressure = sample.quantity.doubleValue(for: HKUnit(from: "mmHg"))
         }
         self.readSampleHealthData(for: HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass)!){
@@ -192,12 +198,16 @@ class Product_Details_ControllerViewController: UIViewController {
     }
     func compareData(){
         var resultFlag = false
-        var resultMessage = "This product is not suitable for you because"
+        var resultMessage = ""
         if(age! < selectedProduct!.startingAge || age! > selectedProduct!.endingAge){
             resultFlag = true
-            resultMessage.append(", not recommended for your age")
-            
+            resultMessage.append("* not recommended for your age")
         }
+        if(resultFlag == true){
+            resultLabel.text = "        This product is not suitable for you"
+            resultImage.image = UIImage(named: "disapproval2")
+        }
+        
         
     }
     
