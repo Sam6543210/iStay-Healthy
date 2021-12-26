@@ -33,8 +33,7 @@ class Product_Details_ControllerViewController: UIViewController {
     
     var age:Int?
     var gender:String?
-    var bloodPressure:Double = 0.0
-        var weight,height,cholesterol,sugar,sodium:Double?
+    var bloodPressure,weight,height,cholesterol,sugar,sodium:Double?
     
     var selectedProduct: Product? = nil
     let healthDetails = HealthDetails_ViewController.init()
@@ -42,7 +41,8 @@ class Product_Details_ControllerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpProductDetail()
-        compareData()
+        getHealthData()
+        showResult()
         // Do any additional setup after loading the view.
     }
     private let manager = ProductManager()
@@ -90,30 +90,20 @@ class Product_Details_ControllerViewController: UIViewController {
         let sortDiscriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
         let limit = 1
         
-       /* let sampleQuery = HKSampleQuery(sampleType: sampleType, predicate: mostRecentPredicate, limit: limit, sortDescriptors: [sortDiscriptor]){
+        let sampleQuery = HKSampleQuery(sampleType: sampleType, predicate: mostRecentPredicate, limit: limit, sortDescriptors: [sortDiscriptor]){
             (query, samples, error) in
-            DispatchQueue.main.async{
                 guard let samples = samples,
                       let mostRecentSample = samples.first as? HKQuantitySample else{
                           completion(nil,error)
                           return
                           }
                 completion(mostRecentSample,nil)
-            }
-        }*/
-        
-        let sampleQuery = HKSampleQuery(sampleType: sampleType, predicate: mostRecentPredicate, limit: limit, sortDescriptors: [sortDiscriptor]){
-            (query, samples, error) in
-            
-            let samples = samples
-            let mostRecentSample = samples?.first as? HKQuantitySample
-                completion(mostRecentSample,nil)
             
         }
         
         HKHealthStore().execute(sampleQuery)
     }
-    func getHealthData(completion :() -> Void){
+    func getHealthData(){
         age = healthDetails.readCharacteristicHealthData().age
         gender = healthDetails.readCharacteristicHealthData().gender
         
@@ -158,7 +148,7 @@ class Product_Details_ControllerViewController: UIViewController {
             }
             self.cholesterol = sample.quantity.doubleValue(for: HKUnit(from: "mg"))
         }
-        healthDetails.readSampleHealthData(for: HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietarySugar)!){
+        self.readSampleHealthData(for: HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietarySugar)!){
             (sample, error) in
             guard let sample = sample else {
                 if let error = error {
@@ -168,7 +158,7 @@ class Product_Details_ControllerViewController: UIViewController {
             }
             self.sugar = sample.quantity.doubleValue(for: HKUnit(from: "mg"))
         }
-        healthDetails.readSampleHealthData(for: HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietarySodium)!){
+        self.readSampleHealthData(for: HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietarySodium)!){
             (sample, error) in
             guard let sample = sample else {
                 if let error = error {
@@ -177,19 +167,37 @@ class Product_Details_ControllerViewController: UIViewController {
                 return
             }
             self.sodium = sample.quantity.doubleValue(for: HKUnit(from: "mg"))
-            print("inside sodium method")
         }
-        completion()
     }
     func printingg(){
         print("age:\(String(describing: (age)!)), gender:\(gender!),")
         print("BP:\(String(describing: self.bloodPressure)), weight:\(String(describing: weight)), height:\(String(describing: height)), cholest:\(String(describing: cholesterol)), sugar:\(String(describing: sugar)), sodium:\(String(describing: sodium))")
     }
+    func showResult(){
+        var flag = false
+        while(flag == false){
+            print("iside while loop")
+            if( bloodPressure != nil
+                && weight != nil
+                && height != nil
+                && cholesterol != nil
+                && sugar != nil
+                && sodium != nil
+            ){
+                self.printingg()
+                self.compareData()
+                flag = true
+            }
+        }
+    }
     func compareData(){
-       
-        self.getHealthData(completion: {
-            self.printingg()
-        })
+        var resultFlag = false
+        var resultMessage = "This product is not suitable for you because"
+        if(age! < selectedProduct!.startingAge || age! > selectedProduct!.endingAge){
+            resultFlag = true
+            resultMessage.append(", not recommended for your age")
+            
+        }
         
     }
     
