@@ -18,7 +18,7 @@ class ProductViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-       fillData()
+       //fillData()
     }
     func fillData()
     {

@@ -28,7 +28,7 @@ class Product_Details_ControllerViewController: UIViewController {
     @IBOutlet weak var resultImage: UIImageView!
     @IBOutlet weak var resultLabel: UILabel!
     @IBAction func infoAction(_ sender: Any) {
-        let alert = UIAlertController(title: "", message: "reasons", preferredStyle: .alert)
+        let alert = UIAlertController(title: "", message: infoMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "O.K.", style: .cancel, handler: { (action) in
             print("pressed O.K")
         }))
@@ -41,7 +41,7 @@ class Product_Details_ControllerViewController: UIViewController {
     var age:Int?
     var gender:String?
     var bloodPressure,weight,height,cholesterol,sugar,sodium:Double?
-    
+    var infoMessage:String = ""
     var selectedProduct: Product? = nil
     let healthDetails = HealthDetails_ViewController.init()
     
@@ -176,8 +176,9 @@ class Product_Details_ControllerViewController: UIViewController {
         }
     }
     func printingg(){
+        let bmi = getBMI()
         print("age:\(String(describing: (age)!)), gender:\(gender!),")
-        print("BP:\(String(describing: self.bloodPressure)), weight:\(String(describing: weight)), height:\(String(describing: height)), cholest:\(String(describing: cholesterol)), sugar:\(String(describing: sugar)), sodium:\(String(describing: sodium))")
+        print("BP:\(String(describing: self.bloodPressure)), weight:\(String(describing: weight)), height:\(String(describing: height)), cholest:\(String(describing: cholesterol)), sugar:\(String(describing: sugar)), sodium:\(String(describing: sodium)), bmi:\(bmi)")
     }
     func showResult(){
         var flag = false
@@ -191,24 +192,108 @@ class Product_Details_ControllerViewController: UIViewController {
                 && sodium != nil
             ){
                 self.printingg()
-                self.compareData()
+                infoMessage =  self.compareData()
                 flag = true
             }
         }
     }
-    func compareData(){
+    func compareData() -> String{
         var resultFlag = false
         var resultMessage = ""
         if(age! < selectedProduct!.startingAge || age! > selectedProduct!.endingAge){
             resultFlag = true
-            resultMessage.append("* not recommended for your age")
+            resultMessage.append("\n* not recommended for your age")
         }
+        let bmi = getBMI()
+        if(age! >= 20){
+            /*if(bmi < 18.5){
+            }
+            else if(bmi >= 18.5 && bmi < 25){
+            }*/
+            let fat = selectedProduct?.fatContent
+            if(bmi >= 25 && bmi < 30){
+                if(fat as! Int >= 10){
+                    resultFlag = true
+                    resultMessage.append("\n* contains high fat content")
+                }
+            }
+            else if(bmi >= 30){
+                if(fat as! Int >= 5){
+                    resultFlag = true
+                    resultMessage.append("\n* contains high fat content")
+                }
+            }
+            if(cholesterol! > 200 && fat as! Int > 15){
+                resultFlag = true
+                resultMessage.append("\n* high fat may increase your cholesterol")
+            }
+        }
+        else if(age! >= 2 && age! < 20){
+            /*if(bmi < 17.5){
+            }
+            else if(bmi >= 17.5 && bmi < 25){
+            }*/
+            let fat = selectedProduct?.fatContent
+            if(bmi >= 25 && bmi < 28.4){
+                if(fat as! Int >= 10){
+                    resultFlag = true
+                    resultMessage.append("\n* contains high fat content")
+                }
+            }
+            else if(bmi >= 28.3){
+                if(fat as! Int >= 5){
+                    resultFlag = true
+                    resultMessage.append("\n* contains high fat content")
+                }
+            }
+            if(cholesterol! > 170 && fat as! Int > 15){
+                resultFlag = true
+                resultMessage.append("\n* high fat may increase your cholesterol")
+            }
+        }
+        if(bloodPressure! > 120){
+            let sodium = selectedProduct?.sodium
+            let fat = selectedProduct?.fatContent
+            if(sodium as! Int > 500 && fat as! Int > 17){
+                resultFlag = true
+                resultMessage.append("\n* contains high salt,fat content")
+            }
+            else if(sodium as! Int > 500){
+                resultFlag = true
+                resultMessage.append("\n* contains high salt content")
+            }
+            else if(fat as! Int > 17){
+                resultFlag = true
+                resultMessage.append("\n* high fat may affect your BP")
+            }
+        }
+        if(sugar! >= 100 && sugar! < 125){
+            let productSugar = selectedProduct?.sugarContent
+            if(productSugar as! Int > 10){
+                resultFlag = true
+                resultMessage.append("\n* contains high sugar content")
+            }
+        }
+        else if(sugar! >= 125){
+            let productSugar = selectedProduct?.sugarContent
+            if(productSugar as! Int > 5){
+                resultFlag = true
+                resultMessage.append("\n* contains high sugar content")
+            }
+        }
+        //allergy
+        
         if(resultFlag == true){
             resultLabel.text = "        This product is not suitable for you"
             resultImage.image = UIImage(named: "disapproval2")
         }
-        
-        
+        return resultMessage
     }
-    
+    func getBMI() -> Double{
+        var bmiHeight = self.height
+        bmiHeight = bmiHeight! * 0.3048
+        bmiHeight = bmiHeight! * bmiHeight!
+        let bmi = self.weight! / bmiHeight!
+        return bmi
+    }
 }
