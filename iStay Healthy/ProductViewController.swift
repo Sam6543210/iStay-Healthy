@@ -18,11 +18,11 @@ class ProductViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-      //  fillData()
+       fillData()
     }
     func fillData()
     {
-        let product1 = Product(productName: "Instant Oat Meal Cups (50g)", productImage: "product3", brand: "Quaker", addedFlavour: "No", allergenInformation1: "Almond", allergenInformation2: "Soy", sugarContent: 10, sodium: 0.18, fatContent: 4, startingAge: 15, endingAge: 70, energy: 465, productPrice: 100, productDescription: "The sweet and nutty flavour of Instant Quaker OatMeal Honey & almonds cups are about to make your morning easier", id: UUID())
+        let product1 = Product(productName: "Haldiram's All in One (350g)", productImage: "product5", brand: "Haldiram's", addedFlavour: "No", allergenInformation1: "Cashew", allergenInformation2: "Peanut", sugarContent: 0.22, sodium: 90.6, fatContent: 32.16, startingAge: 10, endingAge: 60, energy: 2244, productPrice: 90, productDescription: "Indian snacks with a mix of all fried Indian delicacies", id: UUID())
         manager.createProduct(product: product1)
        
     }
