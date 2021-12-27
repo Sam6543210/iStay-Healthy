@@ -22,7 +22,7 @@ class ProductViewController: UIViewController {
     }
     func fillData()
     {
-        let product1 = Product(productName: "Haldiram's All in One (350g)", productImage: "product5", brand: "Haldiram's", addedFlavour: "No", allergenInformation1: "Cashew", allergenInformation2: "Peanut", sugarContent: 0.22, sodium: 90.6, fatContent: 32.16, startingAge: 10, endingAge: 60, energy: 2244, productPrice: 90, productDescription: "Indian snacks with a mix of all fried Indian delicacies", id: UUID())
+        let product1 = Product(productName: "kellogg's oats (2kg)", productImage: "product6", brand: "Kellogg's", addedFlavour: "No", allergenInformation1: "Gluten", allergenInformation2: "None", sugarContent: 0, sodium: 7, fatContent: 9, startingAge: 15, endingAge: 75, energy: 379, productPrice: 320, productDescription: "Oats is a wonder grain that has more soluble fibre than some grains like wheat and rice", id: UUID())
         manager.createProduct(product: product1)
        
     }
