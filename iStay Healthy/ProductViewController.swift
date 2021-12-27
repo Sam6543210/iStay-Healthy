@@ -22,7 +22,7 @@ class ProductViewController: UIViewController {
     }
     func fillData()
     {
-        let product1 = Product(productName: "Yogabar Crunchy Peanut Butter (1kg)", productImage: "product7", brand: "Yogabar", addedFlavour: "Yes", allergenInformation1: "Peanut", allergenInformation2: "Soy", sugarContent: 18.7, sodium: 364, fatContent: 41.2, startingAge: 10, endingAge: 60, energy: 589, productPrice: 649, productDescription: "Our products are stuffed with nutrients, with all ingredients that's good for you", id: UUID())
+        let product1 = Product(productName: "Sprite Soft Drink Can (300ml)", productImage: "product8", brand: "Sprite", addedFlavour: "Yes", allergenInformation1: "None", allergenInformation2: "None", sugarContent: 9.8, sodium: 14, fatContent: 0, startingAge: 5, endingAge: 90, energy: 40, productPrice: 40, productDescription: "Be it summers or winters, Sprite will always keep you refreshed. It has true feelings for your thirst", id: UUID())
         manager.createProduct(product: product1)
        
     }
