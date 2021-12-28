@@ -85,7 +85,7 @@ extension ProductViewController: UITableViewDelegate,UITableViewDataSource
       /*  let cart = self.storyboard?.instantiateViewController(withIdentifier:"cartId") as! CartViewController
         self.navigationController?.pushViewController(cart,animated: true)*/
     }
-    func showToast(controller:ProductViewController, message:String,seconds:Double)
+    func showToast(controller:UIViewController, message:String,seconds:Double)
     {
         let alert = UIAlertController(title:nil,message:message,preferredStyle:.alert)
         alert.view.backgroundColor = UIColor.gray

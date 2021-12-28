@@ -34,12 +34,14 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource
            
         
     }
-    func compare(product:MyCart) -> (mesage:String,result:Bool)
+    func compare(product:MyCart) -> (message:String,result:Bool)
     {
-        let sugar = Int(product.sugarContent)
-        
-        
-            return("High Sugar content",false)
+        let product2 = Product(productName: product.productName, productImage: product.productImage, brand: product.brand, addedFlavour: product.addedFlavour, allergenInformation1: product.allergenInformation1, allergenInformation2: product.allergenInformation2, sugarContent: product.sugarContent, sodium: product.sodium, fatContent: product.fatContent, startingAge: product.startingAge, endingAge: product.endingAge, energy: product.energy, productPrice: product.price, productDescription: product.productName, id: product.id)
+        let productDetails = Product_Details_ControllerViewController.init()
+        print(product2)
+        productDetails.setUpProductDetail(product: product2)
+        let (result,message) = productDetails.showResult()
+            return(message,result)
         
     }
   

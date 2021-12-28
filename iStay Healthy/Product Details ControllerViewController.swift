@@ -36,8 +36,14 @@ class Product_Details_ControllerViewController: UIViewController {
     }
     @IBOutlet weak var addToCartButton: UIButton!
     @IBAction func addToCartAction(_ sender: Any) {
+        let productView = ProductViewController.init()
+        let t = MyCart(pName: (selectedProduct?.productName)!, pImage: (selectedProduct?.productImage)!, pBrand: (selectedProduct?.brand)!, pAddedFlavour: (selectedProduct?.addedFlavour)!, pAllergenInformation1: (selectedProduct?.allergenInformation1)!, pAllergenInformation2: (selectedProduct?.allergenInformation2)!, pSugarContent: (selectedProduct?.sugarContent)!, pSodium: (selectedProduct?.sodium)!, pFatContent: (selectedProduct?.fatContent)!, pPrice: (selectedProduct?.productPrice)!, pStartingAge: (selectedProduct?.startingAge)!, pEndingAge: (selectedProduct?.endingAge)!, pEnergy: (selectedProduct?.energy)!, id1: selectedProduct!.id)
+        cartProducts.append(t)
+        productView.showToast(controller: self, message: "Added to cart", seconds: 2)
     }
-    
+    private let allergy_Manager : AllergyManager = AllergyManager()
+    var allergies:[Allergy] = []
+    var allergyYes:[String] = []
     var age:Int?
     var gender:String?
     var bloodPressure,weight,height,cholesterol,sugar,sodium:Double?
@@ -47,12 +53,14 @@ class Product_Details_ControllerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpProductDetail()
+        setUpProductDetail(product: selectedProduct!)
         getHealthData()
+        getAllergyYes()
         showResult()
         // Do any additional setup after loading the view.
     }
     private let manager = ProductManager()
+    
     @IBAction func deleteTap(_ sender: Any) {
         if(manager.deleteProduct(id: selectedProduct!.id))
         {
@@ -63,8 +71,11 @@ class Product_Details_ControllerViewController: UIViewController {
             print("Not deleted")
         }
     }
-    func setUpProductDetail()
+    func setUpProductDetail(product:Product)
     {
+        selectedProduct = product
+        print(selectedProduct!)
+        
         self.passedProductImge.image = UIImage(named:(selectedProduct?.productImage)!)
         self.productNameLabel.text = selectedProduct?.productName
         self.productNameLabel.frame = CGRect(x: 20, y: 350, width: self.productNameLabel.intrinsicContentSize.width, height: self.productNameLabel.intrinsicContentSize.height)
@@ -175,15 +186,28 @@ class Product_Details_ControllerViewController: UIViewController {
             self.sodium = sample.quantity.doubleValue(for: HKUnit(from: "mg"))
         }
     }
-    func printingg(){
+    /*func printingg(){
         let bmi = getBMI()
         print("age:\(String(describing: (age)!)), gender:\(gender!),")
-        print("BP:\(String(describing: self.bloodPressure)), weight:\(String(describing: weight)), height:\(String(describing: height)), cholest:\(String(describing: cholesterol)), sugar:\(String(describing: sugar)), sodium:\(String(describing: sodium)), bmi:\(bmi)")
+        print("BP:\(String(describing: self.bloodPressure)), weight:\(String(describing: weight)), height:\(String(describing: height)), cholest:\(String(describing: cholesterol)), sugar:\(String(describing: sugar)), sodium:\(String(describing: sodium)), bmi:\(bmi)\nallergies:\(String(describing: allergyYes))")
+    }*/
+    func getAllergyYes(){
+        allergies = allergy_Manager.fetchAllergy()!
+        let count = allergies.count
+        if(allergies.count != 0){
+            for i in 0...count-1 {
+                //print(allergies[i].allergyStatus!)
+                if(allergies[i].allergyStatus! == "Yes"){
+                    allergyYes.append(allergies[i].allergyName!)
+                }
+            }
+        }
     }
-    func showResult(){
+    func showResult() -> (Bool,String){
         var flag = false
+        var resultFlag:Bool = true
+        var resultMessage:String = ""
         while(flag == false){
-            print("iside while loop")
             if( bloodPressure != nil
                 && weight != nil
                 && height != nil
@@ -191,13 +215,14 @@ class Product_Details_ControllerViewController: UIViewController {
                 && sugar != nil
                 && sodium != nil
             ){
-                self.printingg()
-                infoMessage =  self.compareData()
+                (resultFlag,resultMessage) = compareData()
+                infoMessage = resultMessage
                 flag = true
             }
         }
+        return (resultFlag,resultMessage)
     }
-    func compareData() -> String{
+    func compareData() -> (Bool,String){
         var resultFlag = false
         var resultMessage = ""
         if(age! < selectedProduct!.startingAge || age! > selectedProduct!.endingAge){
@@ -251,6 +276,21 @@ class Product_Details_ControllerViewController: UIViewController {
                 resultMessage.append("\n* high fat may increase your cholesterol")
             }
         }
+        if(allergyYes.count != 0){
+            let count = allergyYes.count
+            for i in 0...count-1 {
+                if(allergyYes[i] == selectedProduct?.allergenInformation1){
+                    resultFlag = true
+                    resultMessage.append("\n* contains ingredients allergic to you")
+                    break
+                }
+                else if(allergyYes[i] == selectedProduct?.allergenInformation2){
+                    resultFlag = true
+                    resultMessage.append("\n* contains ingredients allergic to you")
+                    break
+                }
+            }
+        }
         if(bloodPressure! > 120){
             let sodium = selectedProduct?.sodium
             let fat = selectedProduct?.fatContent
@@ -281,13 +321,12 @@ class Product_Details_ControllerViewController: UIViewController {
                 resultMessage.append("\n* contains high sugar content")
             }
         }
-        //allergy
         
         if(resultFlag == true){
             resultLabel.text = "        This product is not suitable for you"
             resultImage.image = UIImage(named: "disapproval2")
         }
-        return resultMessage
+        return (resultFlag,resultMessage)
     }
     func getBMI() -> Double{
         var bmiHeight = self.height
