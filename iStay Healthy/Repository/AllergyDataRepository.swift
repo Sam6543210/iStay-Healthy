@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 protocol AllergyRepository {
     func create(allergy: Allergy)
-    //func getAll() -> [Allergy]?
+    func getAll() -> [Allergy]?
 }
 struct AllergyDataRepository: AllergyRepository
 {
@@ -21,5 +21,13 @@ struct AllergyDataRepository: AllergyRepository
         PersistentStorage.shared.saveContext()
    
     
+    }
+    func getAll() -> [Allergy]? {
+        let result = PersistentStorage.shared.fetchManagedObject(managedObject: CDAllergy.self)
+        var allergies:[Allergy] = []
+        result?.forEach({ (cdAllergy) in
+            allergies.append(cdAllergy.convertToAllergy())
+        })
+        return allergies
     }
 }

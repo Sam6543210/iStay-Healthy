@@ -19,6 +19,11 @@ extension CDAllergy {
     @NSManaged public var allergyName: String?
     @NSManaged public var allergyStatus: String?
     @NSManaged public var allergyId: UUID?
+    
+    func convertToAllergy() -> Allergy
+    {
+        return Allergy(allergyName: self.allergyName, allergyStatus: self.allergyStatus, allergyId: self.allergyId!)
+    }
 
 }
 

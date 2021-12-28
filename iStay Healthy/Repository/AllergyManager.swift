@@ -17,4 +17,8 @@ struct AllergyManager
    
     
     }
+    func fetchAllergy() -> [Allergy]?
+    {
+        return allergyData.getAll()
+    }
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kJt-pJ-gk9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kJt-pJ-gk9">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f62-AP-xoz" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="576.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="586.33333333333337"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Hi Tom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5F-Vm-xCk">
                                                 <rect key="frame" x="28" y="28.000000000000004" width="358" height="32.333333333333343"/>
@@ -30,7 +30,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Gb5-S3-sg8">
-                                                <rect key="frame" x="28" y="90.333333333333343" width="368" height="383.33333333333326"/>
+                                                <rect key="frame" x="28" y="90.333333333333371" width="368" height="393"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="UmN-9E-XWe" userLabel="Gender Stack View">
                                                         <rect key="frame" x="0.0" y="0.0" width="368" height="20.333333333333332"/>
@@ -217,33 +217,34 @@
                                                             </stackView>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="140" translatesAutoresizingMaskIntoConstraints="NO" id="v2i-FK-W23" userLabel="Allergies Stack View">
-                                                        <rect key="frame" x="0.0" y="241.99999999999997" width="368" height="20.333333333333343"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="230" translatesAutoresizingMaskIntoConstraints="NO" id="v2i-FK-W23" userLabel="Allergies Stack View">
+                                                        <rect key="frame" x="0.0" y="242" width="368" height="30"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="g8C-PR-FSX" userLabel="Allergies Image Text Stack View">
-                                                                <rect key="frame" x="0.0" y="0.0" width="186.66666666666666" height="20.333333333333332"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="95.333333333333329" height="30"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="allergyicon" translatesAutoresizingMaskIntoConstraints="NO" id="LHo-3a-jVi">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20.333333333333332"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="30"/>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allergies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DlX-6x-LlQ">
-                                                                        <rect key="frame" x="30" y="0.0" width="156.66666666666666" height="20.333333333333332"/>
+                                                                        <rect key="frame" x="30" y="0.0" width="65.333333333333329" height="30"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJA-Mw-gEA">
-                                                                <rect key="frame" x="326.66666666666669" y="0.0" width="41.333333333333314" height="20.333333333333332"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <color key="textColor" systemColor="systemGray2Color"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yvu-aU-vtU">
+                                                                <rect key="frame" x="325.33333333333331" y="0.0" width="42.666666666666686" height="30"/>
+                                                                <state key="normal" title="Edit"/>
+                                                                <connections>
+                                                                    <segue destination="mr1-On-4Ev" kind="show" id="AWk-YC-hNn"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="120" translatesAutoresizingMaskIntoConstraints="NO" id="Fd8-1C-oCI" userLabel="Height Stack View">
-                                                        <rect key="frame" x="0.0" y="282.33333333333337" width="368" height="20.333333333333314"/>
+                                                        <rect key="frame" x="0.0" y="292" width="368" height="20.333333333333314"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xvV-No-gIy" userLabel="Height Image Text Stack View">
                                                                 <rect key="frame" x="0.0" y="0.0" width="206.66666666666666" height="20.333333333333332"/>
@@ -268,7 +269,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="130" translatesAutoresizingMaskIntoConstraints="NO" id="54R-vm-mHW" userLabel="Weight Stack View">
-                                                        <rect key="frame" x="0.0" y="322.66666666666663" width="368" height="20.333333333333314"/>
+                                                        <rect key="frame" x="0.0" y="332.33333333333337" width="368" height="20.333333333333314"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zyc-Vq-ttd" userLabel="Weight Image Text Stack View">
                                                                 <rect key="frame" x="0.0" y="0.0" width="196.66666666666666" height="20.333333333333332"/>
@@ -293,7 +294,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="ILV-u6-UNm" userLabel="Sodium Level Stack View">
-                                                        <rect key="frame" x="0.0" y="363" width="368" height="20.333333333333314"/>
+                                                        <rect key="frame" x="0.0" y="372.66666666666663" width="368" height="20.333333333333314"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Cx4-Uk-a8C" userLabel="Sodium Level  Image Text Stack View">
                                                                 <rect key="frame" x="0.0" y="0.0" width="226.66666666666666" height="20.333333333333332"/>
@@ -320,7 +321,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCo-Xh-VIQ">
-                                                <rect key="frame" x="28" y="518.66666666666663" width="358" height="30"/>
+                                                <rect key="frame" x="28" y="528.33333333333337" width="358" height="30"/>
                                                 <state key="normal" title="Authorize"/>
                                                 <connections>
                                                     <action selector="authorizeHealthDetails:" destination="gha-9e-73m" eventType="touchUpInside" id="QAM-ic-I1z"/>
@@ -521,6 +522,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1IA-c8-HXV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1652.3076923076922" y="204.739336492891"/>
+        </scene>
+        <!--Allergies Edit-->
+        <scene sceneID="hhI-tq-HAZ">
+            <objects>
+                <viewController id="mr1-On-4Ev" customClass="AllergyViewController" customModule="iStay_Healthy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w4J-EG-Ctv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Psd-d2-8b3">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="allergycell" id="kkS-dt-OLC">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kkS-dt-OLC" id="15k-1T-hQc">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="mr1-On-4Ev" id="kLs-an-Xfu"/>
+                                    <outlet property="delegate" destination="mr1-On-4Ev" id="EFv-Xh-Ak5"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QlL-c5-1y5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QlL-c5-1y5" firstAttribute="bottom" secondItem="Psd-d2-8b3" secondAttribute="bottom" id="Cfj-ms-D5I"/>
+                            <constraint firstItem="Psd-d2-8b3" firstAttribute="leading" secondItem="QlL-c5-1y5" secondAttribute="leading" id="Yrm-Cm-uZL"/>
+                            <constraint firstItem="Psd-d2-8b3" firstAttribute="top" secondItem="QlL-c5-1y5" secondAttribute="top" id="ass-kk-gx4"/>
+                            <constraint firstItem="QlL-c5-1y5" firstAttribute="trailing" secondItem="Psd-d2-8b3" secondAttribute="trailing" id="t7W-7X-Q0r"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Allergies Edit" id="QzC-Ms-6ea"/>
+                    <connections>
+                        <outlet property="tableView" destination="Psd-d2-8b3" id="MnP-Mm-LZD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BGL-Bp-scW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2479.7101449275365" y="205.58035714285714"/>
         </scene>
         <!--Health Details-->
         <scene sceneID="MaG-iL-crr">
