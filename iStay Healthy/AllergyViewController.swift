@@ -21,7 +21,9 @@ class AllergyViewController: UIViewController {
         //fillData()
        
         self.tableView.isEditing = true
+        self.tableView.allowsSelection = false
         self.tableView.allowsSelectionDuringEditing = true
+        self.tableView.allowsMultipleSelectionDuringEditing = true
     }
     func fillData(){
         for i in 0...(allergyNameArray.count-1) {
