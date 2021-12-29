@@ -372,7 +372,7 @@
                     <tabBarItem key="tabBarItem" title="Health DEtails" image="healthicon" id="roM-Va-piW"/>
                     <navigationItem key="navigationItem" title="Health Details" id="vU4-2A-Que">
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="DAa-GF-DFa"/>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="L1j-OY-ZqN">
+                        <barButtonItem key="rightBarButtonItem" id="L1j-OY-ZqN">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="g60-hY-vDl">
                                 <rect key="frame" x="308" y="7" width="86" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

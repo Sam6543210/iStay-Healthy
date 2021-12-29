@@ -189,7 +189,7 @@ class HealthDetails_ViewController: UIViewController {
                 }
                 return
             }
-            self.weightLabel.text = String(sample.quantity.doubleValue(for: HKUnit(from: "kg")))
+            self.weightLabel.text = String(format: "%.2f",sample.quantity.doubleValue(for: HKUnit(from: "kg")))
             self.weightLabel.text?.append(" kg")
             self.bmiWeight = sample.quantity.doubleValue(for: HKUnit(from: "kg"))
             if(self.bmiHeight != 0){
@@ -251,7 +251,8 @@ class HealthDetails_ViewController: UIViewController {
         self.bmiHeight = self.bmiHeight * 0.3048
         self.bmiHeight = self.bmiHeight * self.bmiHeight
         let bmi = bmiWeight/bmiHeight
-        bmiLabel.text = "\(bmi) kg/m2"
+        bmiLabel.text = String(format: "%.2f", bmi)
+        bmiLabel.text?.append(" kg/m2")
     }
     private func dislayAlert(for error : Error){
         let alert = UIAlertController(title: nil, message: error.localizedDescription, preferredStyle: .alert)
