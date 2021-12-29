@@ -10,6 +10,7 @@ import CoreData
 protocol AllergyRepository {
     func create(allergy: Allergy)
     func getAll() -> [Allergy]?
+    //func getById(byIdentifier id : UUID)
 }
 struct AllergyDataRepository: AllergyRepository
 {
@@ -19,8 +20,6 @@ struct AllergyDataRepository: AllergyRepository
         cdAllergy.allergyStatus = allergy.allergyStatus
         cdAllergy.allergyId = allergy.allergyId
         PersistentStorage.shared.saveContext()
-   
-    
     }
     func getAll() -> [Allergy]? {
         let result = PersistentStorage.shared.fetchManagedObject(managedObject: CDAllergy.self)

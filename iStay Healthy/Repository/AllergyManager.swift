@@ -14,8 +14,6 @@ struct AllergyManager
     func createAllergy(allergy:Allergy)
     {
         allergyData.create(allergy: allergy)
-   
-    
     }
     func fetchAllergy() -> [Allergy]?
     {

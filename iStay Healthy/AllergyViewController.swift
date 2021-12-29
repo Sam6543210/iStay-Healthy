@@ -10,6 +10,13 @@ import UIKit
 class AllergyViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBAction func saveAllergyAction(_ sender: Any) {
+        // print(allAllergy!)
+        updateAllergyData()
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
     private let manager: AllergyManager = AllergyManager()
     let allergyNameArray: [String] = ["Peanut", "Soy", "Gluten", "Cashew", "Milk", "Wheat", "Almond","Hazelnuts","Guava", "Papaya"]
     var selectArr = [String]()
@@ -30,19 +37,34 @@ class AllergyViewController: UIViewController {
         let allergy1 = Allergy(allergyName: allergyNameArray[i], allergyStatus: allergyStatusArray[i], allergyId: UUID())
             manager.createAllergy(allergy: allergy1)
         }
-        
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func updateAllergyData(){
+        let allAllergy = manager.fetchAllergy()
+        let count = selectArr.count
+        for i in 0...count-1 {
+            var j = 0
+            for algy in [allAllergy] {
+                if(selectArr[i] == algy![j].allergyName){
+                    let updateAllergyYes = Allergy(allergyName: algy![j].allergyName, allergyStatus: "Yes", allergyId: algy![j].allergyId)
+                    
+                }
+                else{
+                    var flag = false
+                    for k in 0...selectArr.count-1 {
+                        if(algy![j].allergyName == selectArr[k]){
+                            flag = true
+                            break
+                        }
+                    }
+                    if(flag == false){
+                        let updateAllergyNo = Allergy(allergyName: algy![j].allergyName, allergyStatus: "No", allergyId: algy![j].allergyId)
+                    }
+                }
+                j+=1
+            }
+        }
+        print(selectArr)
     }
-    */
 
 }
 extension AllergyViewController: UITableViewDelegate,UITableViewDataSource {

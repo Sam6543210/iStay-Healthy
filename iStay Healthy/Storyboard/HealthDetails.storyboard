@@ -563,7 +563,13 @@
                             <constraint firstItem="QlL-c5-1y5" firstAttribute="trailing" secondItem="Psd-d2-8b3" secondAttribute="trailing" id="t7W-7X-Q0r"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Allergies Edit" id="QzC-Ms-6ea"/>
+                    <navigationItem key="navigationItem" title="Allergies Edit" id="QzC-Ms-6ea">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="PVH-f4-jrY">
+                            <connections>
+                                <action selector="saveAllergyAction:" destination="mr1-On-4Ev" id="9sb-7z-z91"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Psd-d2-8b3" id="MnP-Mm-LZD"/>
                     </connections>
