@@ -235,18 +235,18 @@ class Product_Details_ControllerViewController: UIViewController {
             }*/
             let fat = selectedProduct?.fatContent
             if(bmi >= 25 && bmi < 30){
-                if(fat as! Int >= 10){
+                if(Int(truncating: fat!) >= 10){
                     resultFlag = true
                     resultMessage.append("\n* contains high fat content")
                 }
             }
             else if(bmi >= 30){
-                if(fat as! Int >= 5){
+                if(Int(truncating: fat!) >= 5){
                     resultFlag = true
                     resultMessage.append("\n* contains high fat content")
                 }
             }
-            if(cholesterol! > 200 && fat as! Int > 15){
+            if(cholesterol! > 200 && Int(truncating: fat!) > 15){
                 resultFlag = true
                 resultMessage.append("\n* high fat may increase your cholesterol")
             }
@@ -258,18 +258,18 @@ class Product_Details_ControllerViewController: UIViewController {
             }*/
             let fat = selectedProduct?.fatContent
             if(bmi >= 25 && bmi < 28.4){
-                if(fat as! Int >= 10){
+                if(Int(truncating: fat!) >= 10){
                     resultFlag = true
                     resultMessage.append("\n* contains high fat content")
                 }
             }
             else if(bmi >= 28.3){
-                if(fat as! Int >= 5){
+                if(Int(truncating: fat!) >= 5){
                     resultFlag = true
                     resultMessage.append("\n* contains high fat content")
                 }
             }
-            if(cholesterol! > 170 && fat as! Int > 15){
+            if(cholesterol! > 170 && Int(truncating: fat!) > 15){
                 resultFlag = true
                 resultMessage.append("\n* high fat may increase your cholesterol")
             }
@@ -292,32 +292,35 @@ class Product_Details_ControllerViewController: UIViewController {
         if(bloodPressure! > 120){
             let sodium = selectedProduct?.sodium
             let fat = selectedProduct?.fatContent
-            if(sodium as! Int > 500 && fat as! Int > 17){
+            if(Int(truncating: sodium!) > 500 && Int(truncating: fat!) > 17){
                 resultFlag = true
                 resultMessage.append("\n* contains high salt,fat content")
             }
-            else if(sodium as! Int > 500){
+            else if(Int(truncating: sodium!) > 500){
                 resultFlag = true
                 resultMessage.append("\n* contains high salt content")
             }
-            else if(fat as! Int > 17){
+            else if(Int(truncating: fat!) > 17){
                 resultFlag = true
                 resultMessage.append("\n* high fat may affect your BP")
             }
         }
         if(sugar! >= 100 && sugar! < 125){
             let productSugar = selectedProduct?.sugarContent
-            if(productSugar as! Int > 10){
+            if(Int(truncating: productSugar!) > 10){
                 resultFlag = true
                 resultMessage.append("\n* contains high sugar content")
             }
         }
         else if(sugar! >= 125){
             let productSugar = selectedProduct?.sugarContent
-            if(productSugar as! Int > 5){
+            if(Int(truncating: productSugar!) > 5){
                 resultFlag = true
                 resultMessage.append("\n* contains high sugar content")
             }
+        }
+        if(resultFlag == false){
+            resultMessage = "This product is healthy for you"
         }
         return (resultFlag,resultMessage)
     }

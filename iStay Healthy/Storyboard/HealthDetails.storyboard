@@ -516,6 +516,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bloodPressureField" destination="SGI-9H-DDw" id="hd6-7E-kSp"/>
+                        <outlet property="cholesterolField" destination="VCe-mf-ZAB" id="b2V-JY-EUd"/>
+                        <outlet property="heightField" destination="HQ6-f3-omh" id="T1p-xa-brG"/>
+                        <outlet property="sodiumField" destination="rwE-Xt-2un" id="HgL-pu-4Qw"/>
+                        <outlet property="sugarField" destination="IQZ-hu-SQK" id="hN5-G8-eoS"/>
+                        <outlet property="weightField" destination="DQC-Vv-x5u" id="auO-qo-r63"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1IA-c8-HXV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -32,7 +32,12 @@ class HealthDetails_ViewController: UIViewController {
         displayDateOfBirth()
         displayAgeGender()
         displayHealthData()
-        // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        displayDateOfBirth()
+        displayAgeGender()
+        displayHealthData()
     }
     func readDateOfBirth() -> DateComponents?
     {
