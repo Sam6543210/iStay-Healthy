@@ -38,11 +38,10 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource
     {
         let product2 = Product(productName: product.productName, productImage: product.productImage, brand: product.brand, addedFlavour: product.addedFlavour, allergenInformation1: product.allergenInformation1, allergenInformation2: product.allergenInformation2, sugarContent: product.sugarContent, sodium: product.sodium, fatContent: product.fatContent, startingAge: product.startingAge, endingAge: product.endingAge, energy: product.energy, productPrice: product.price, productDescription: product.productName, id: product.id)
         let productDetails = Product_Details_ControllerViewController.init()
-        print(product2)
-        productDetails.setUpProductDetail(product: product2)
-        let (result,message) = productDetails.showResult()
-            return(message,result)
-        
+        productDetails.getHealthData()
+        productDetails.getAllergyYes()
+        let (result,message) = productDetails.showResult(product2: product2)
+        return(message,result)
     }
   
     
@@ -55,7 +54,7 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource
         
        let  (message,result) = compare(product:cartProducts[indexPath.row])
         
-        if(result)
+        if(result == false)
         {
             cell.recommendedOrNotRecommendedProductImage.image = UIImage(named:"approval")
             cell.layer.cornerRadius = 10

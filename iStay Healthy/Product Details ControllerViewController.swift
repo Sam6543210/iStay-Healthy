@@ -53,10 +53,11 @@ class Product_Details_ControllerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpProductDetail(product: selectedProduct!)
+        setUpProductDetail()
         getHealthData()
         getAllergyYes()
-        showResult()
+        let (rf,rm) = showResult(product2:selectedProduct!)
+        setInfoLabel(resultFlag: rf)
         // Do any additional setup after loading the view.
     }
     private let manager = ProductManager()
@@ -71,11 +72,8 @@ class Product_Details_ControllerViewController: UIViewController {
             print("Not deleted")
         }
     }
-    func setUpProductDetail(product:Product)
+    func setUpProductDetail()
     {
-        selectedProduct = product
-        print(selectedProduct!)
-        
         self.passedProductImge.image = UIImage(named:(selectedProduct?.productImage)!)
         self.productNameLabel.text = selectedProduct?.productName
         self.productNameLabel.frame = CGRect(x: 20, y: 350, width: self.productNameLabel.intrinsicContentSize.width, height: self.productNameLabel.intrinsicContentSize.height)
@@ -196,14 +194,14 @@ class Product_Details_ControllerViewController: UIViewController {
         let count = allergies.count
         if(allergies.count != 0){
             for i in 0...count-1 {
-                //print(allergies[i].allergyStatus!)
                 if(allergies[i].allergyStatus! == "Yes"){
                     allergyYes.append(allergies[i].allergyName!)
                 }
             }
         }
     }
-    func showResult() -> (Bool,String){
+    func showResult(product2:Product) -> (Bool,String){
+        selectedProduct = product2
         var flag = false
         var resultFlag:Bool = true
         var resultMessage:String = ""
@@ -321,12 +319,13 @@ class Product_Details_ControllerViewController: UIViewController {
                 resultMessage.append("\n* contains high sugar content")
             }
         }
-        
+        return (resultFlag,resultMessage)
+    }
+    func setInfoLabel(resultFlag:Bool){
         if(resultFlag == true){
             resultLabel.text = "        This product is not suitable for you"
             resultImage.image = UIImage(named: "disapproval2")
         }
-        return (resultFlag,resultMessage)
     }
     func getBMI() -> Double{
         var bmiHeight = self.height

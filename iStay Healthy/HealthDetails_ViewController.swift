@@ -145,7 +145,6 @@ class HealthDetails_ViewController: UIViewController {
     
     func displayHealthData(){
         
-        
         guard let bloodPressureSampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bloodPressureSystolic) else{
         print("Systolic Blood Pressure sample is no longer available in healthkit")
         return
