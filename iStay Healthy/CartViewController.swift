@@ -14,7 +14,7 @@ class CartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
         tableView.reloadData()
     }
     
@@ -70,7 +70,7 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource
             cell.layer.cornerRadius = 10
             cell.layer.borderColor = UIColor.red.cgColor
             cell.layer.borderWidth = 2
-            //toast message on tap
+            
             
             let hover = CustomTapGestureRecognizer(target: self, action: #selector(self.onTap(sender:)))
             hover.ourCustomValue = message
@@ -90,7 +90,7 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource
     @objc
     func onTap(sender:CustomTapGestureRecognizer)
     {
-        showToast(controller:self,message:sender.ourCustomValue,seconds:2)
+        showToast(controller:self,message:sender.ourCustomValue,seconds:6)
     }
     func showToast(controller:CartViewController, message:String,seconds:Double)
     {
@@ -99,7 +99,7 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource
         alert.view.alpha = 0.6
         alert.view.layer.cornerRadius = 15
         controller.present(alert,animated: true)
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 6)
         {
             alert.dismiss(animated: true)
         }
