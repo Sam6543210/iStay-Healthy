@@ -18,11 +18,11 @@ class ProductViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-       //fillData()
+      // fillData()
     }
     func fillData()
     {
-        let product1 = Product(productName: "Sprite Soft Drink Can (300ml)", productImage: "product8", brand: "Sprite", addedFlavour: "Yes", allergenInformation1: "None", allergenInformation2: "None", sugarContent: 9.8, sodium: 14, fatContent: 0, startingAge: 5, endingAge: 90, energy: 40, productPrice: 40, productDescription: "Be it summers or winters, Sprite will always keep you refreshed. It has true feelings for your thirst", id: UUID())
+        let product1 = Product(productName: "Sugarless diet rusk (400g)", productImage: "product14", brand: "Polka", addedFlavour: "Yes", allergenInformation1: "Wheat", allergenInformation2: "None", sugarContent: 1.05, sodium: 0, fatContent: 6.47, startingAge: 15, endingAge: 65, energy: 45, productPrice: 135, productDescription: "It's tasty suji rusk toast freshly prepared keeping your health and wellbeing in mind", id: UUID())
         manager.createProduct(product: product1)
        
     }
