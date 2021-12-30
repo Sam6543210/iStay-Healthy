@@ -11,8 +11,9 @@ class AllergyViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBAction func saveAllergyAction(_ sender: Any) {
-        // print(allAllergy!)
         updateAllergyData()
+        let alll = manager.fetchAllergy()
+        print("after update:\n\(String(describing: alll))")
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -40,32 +41,46 @@ class AllergyViewController: UIViewController {
     }
     func updateAllergyData(){
         let allAllergy = manager.fetchAllergy()
+        print("before update:\n \(String(describing: allAllergy))")
         let count = selectArr.count
-        for i in 0...count-1 {
-            var j = 0
-            for algy in [allAllergy] {
-                if(selectArr[i] == algy![j].allergyName){
-                    let updateAllergyYes = Allergy(allergyName: algy![j].allergyName, allergyStatus: "Yes", allergyId: algy![j].allergyId)
+        if(count > 0 ){
+            for i in 0...count-1 {
+                let countAlgy = (allAllergy?.count)!
+                let algy = allAllergy
+                for j in 0...countAlgy-1 {
                     
-                }
-                else{
-                    var flag = false
-                    for k in 0...selectArr.count-1 {
-                        if(algy![j].allergyName == selectArr[k]){
-                            flag = true
-                            break
+                    if(selectArr[i] == algy![j].allergyName){
+                        let updateAllergyYes = Allergy(allergyName: algy![j].allergyName, allergyStatus: "Yes", allergyId: algy![j].allergyId)
+                        print("\(String(describing: algy![j].allergyName)) updated to yes")
+                        manager.updateAllergy(allergy: updateAllergyYes)
+                    }
+                    else{
+                        var flag = false
+                        for k in 0...selectArr.count-1 {
+                            if(algy![j].allergyName == selectArr[k]){
+                                flag = true
+                                break
+                            }
+                        }
+                        if(flag == false){
+                            let updateAllergyNo = Allergy(allergyName: algy![j].allergyName, allergyStatus: "No", allergyId: algy![j].allergyId)
+                            print("\(String(describing: algy![j].allergyName)) updated to No")
+                            manager.updateAllergy(allergy: updateAllergyNo)
                         }
                     }
-                    if(flag == false){
-                        let updateAllergyNo = Allergy(allergyName: algy![j].allergyName, allergyStatus: "No", allergyId: algy![j].allergyId)
-                    }
                 }
-                j+=1
             }
         }
-        print(selectArr)
+        else{
+            let countAlgy = (allAllergy?.count)!
+            let algy = allAllergy
+            for j in 0...countAlgy-1 {
+                let updateAllergyNo = Allergy(allergyName: algy![j].allergyName, allergyStatus: "No", allergyId: algy![j].allergyId)
+                print("\(String(describing: algy![j].allergyName)) updated to No")
+                manager.updateAllergy(allergy: updateAllergyNo)
+        }
     }
-
+}
 }
 extension AllergyViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

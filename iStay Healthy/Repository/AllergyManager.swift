@@ -19,4 +19,7 @@ struct AllergyManager
     {
         return allergyData.getAll()
     }
+    func updateAllergy(allergy : Allergy){
+        let flag = allergyData.update(allergy: allergy)
+    }
 }
