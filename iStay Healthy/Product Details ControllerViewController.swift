@@ -78,7 +78,7 @@ class Product_Details_ControllerViewController: UIViewController {
         self.productNameLabel.text = selectedProduct?.productName
         self.productNameLabel.frame = CGRect(x: 20, y: 350, width: self.productNameLabel.intrinsicContentSize.width, height: self.productNameLabel.intrinsicContentSize.height)
         self.productPriceLabel.text?.append("\(String(selectedProduct!.productPrice))")
-        self.ageGrpLabel.text?.append("\(String(selectedProduct!.startingAge))-\(String(selectedProduct!.endingAge)))")
+        self.ageGrpLabel.text?.append("\(String(selectedProduct!.startingAge))-\(String(selectedProduct!.endingAge)) yrs)")
         self.ageGrpLabel.frame = CGRect(x: 200, y: 380, width: self.ageGrpLabel.intrinsicContentSize.width, height: self.ageGrpLabel.intrinsicContentSize.height)
         self.productDescriptionText.text.append("\(String((selectedProduct?.productDescription)!))")
         self.textHC.constant = self.productDescriptionText.contentSize.height
@@ -86,12 +86,19 @@ class Product_Details_ControllerViewController: UIViewController {
         self.productFatLabel.text = "\(String(describing: (selectedProduct?.fatContent)!))"
         self.productSugarLabel.text = "\(String(describing: (selectedProduct?.sugarContent)!))"
         self.productSodiumLabel.text = "\(String(describing: (selectedProduct?.sodium)!))"
-        self.allergenLabel.text = "\(String(describing: (selectedProduct?.allergenInformation1)!)), \(String(describing: (selectedProduct?.allergenInformation2)!))"
+        var allrgTxt = ""
+        if(selectedProduct?.allergenInformation1 != "None"){
+            allrgTxt.append("\(String(describing: (selectedProduct?.allergenInformation1)!))")
+        }
+        if(selectedProduct?.allergenInformation2 != "None"){
+            allrgTxt.append(",\(String(describing: (selectedProduct?.allergenInformation2)!))")
+        }
+        self.allergenLabel.text = allrgTxt
         if(selectedProduct?.addedFlavour == "Yes"){
-            self.artificialFlavoursLabel.text = "Contains artificial flavours"
+            self.artificialFlavoursLabel.text = " * Contains artificial flavours"
         }
         else{
-            self.artificialFlavoursLabel.text = "Does not contain artificial flavours"
+            self.artificialFlavoursLabel.text = " Does not contain artificial flavours"
         }
     }
     

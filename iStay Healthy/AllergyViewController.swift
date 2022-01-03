@@ -29,8 +29,8 @@ class AllergyViewController: UIViewController {
         //fillData()
        
         self.tableView.isEditing = true
-        self.tableView.allowsSelection = false
-        self.tableView.allowsSelectionDuringEditing = true
+        //self.tableView.allowsSelection = false
+        //self.tableView.allowsSelectionDuringEditing = true
         self.tableView.allowsMultipleSelectionDuringEditing = true
     }
     func fillData(){
@@ -64,7 +64,7 @@ class AllergyViewController: UIViewController {
                         }
                         if(flag == false){
                             let updateAllergyNo = Allergy(allergyName: algy![j].allergyName, allergyStatus: "No", allergyId: algy![j].allergyId)
-                            print("\(String(describing: algy![j].allergyName)) updated to No")
+                           // print("\(String(describing: algy![j].allergyName)) updated to No")
                             manager.updateAllergy(allergy: updateAllergyNo)
                         }
                     }
