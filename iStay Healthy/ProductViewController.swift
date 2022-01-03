@@ -17,12 +17,12 @@ class ProductViewController: UIViewController {
     private let manager: ProductManager = ProductManager()
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
       // fillData()
     }
     func fillData()
     {
-        let product1 = Product(productName: "Sugarless diet rusk (400g)", productImage: "product14", brand: "Polka", addedFlavour: "Yes", allergenInformation1: "Wheat", allergenInformation2: "None", sugarContent: 1.05, sodium: 0, fatContent: 6.47, startingAge: 15, endingAge: 65, energy: 45, productPrice: 135, productDescription: "It's tasty suji rusk toast freshly prepared keeping your health and wellbeing in mind", id: UUID())
+        let product1 = Product(productName: "Haldiram's Soan Papdi (1kg)", productImage: "product17", brand: "Haldiram's", addedFlavour: "No", allergenInformation1: "Wheat", allergenInformation2:"Almond", sugarContent: 46.06, sodium:8, fatContent: 23.06, startingAge: 15, endingAge: 65, energy: 490, productPrice: 230, productDescription: "Soan Papdi is a crispy flaky and met-in-your-mouth confection that experiences blissful journey with each bite", id: UUID())
         manager.createProduct(product: product1)
        
     }
@@ -60,7 +60,7 @@ extension ProductViewController: UITableViewDelegate,UITableViewDataSource
     @objc func addToButton(sender:UIButton)
     {
         let indexpath1 = IndexPath(row:sender.tag,section:0)
-       // print(self.products![indexpath1.row].productName)
+       
        cartItem = self.products![indexpath1.row]
         let cartImage:String = cartItem!.productImage ?? ""
        let cartName:String = cartItem!.productName ?? ""
@@ -78,12 +78,11 @@ extension ProductViewController: UITableViewDelegate,UITableViewDataSource
         
         let id:UUID = cartItem!.id
         let t = MyCart(pName: cartName, pImage: cartImage, pBrand: cartBrand, pAddedFlavour: cartAddedFlavour, pAllergenInformation1: cartAllergnInformation1, pAllergenInformation2: cartAllergnInformation2, pSugarContent: cartSugarContent, pSodium: cartSodium, pFatContent: cartFatContent, pPrice: cartPrice, pStartingAge: cartStartingAge, pEndingAge: cartEndingAge, pEnergy: cartEnergy, id1: id)
-       // print(cartProducts?[0].brand)
+       
         cartProducts.append(t)
         showToast(controller:self,message:"Product added to cart",seconds:2)
         
-      /*  let cart = self.storyboard?.instantiateViewController(withIdentifier:"cartId") as! CartViewController
-        self.navigationController?.pushViewController(cart,animated: true)*/
+      
     }
     func showToast(controller:UIViewController, message:String,seconds:Double)
     {
@@ -91,7 +90,7 @@ extension ProductViewController: UITableViewDelegate,UITableViewDataSource
         alert.view.backgroundColor = UIColor.gray
         alert.view.alpha = 0.6
         alert.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor.green
-      //  alert.view.tintColor = UIColor.gray
+      
         alert.view.layer.cornerRadius = 15
         controller.present(alert,animated: true)
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2)
@@ -101,20 +100,7 @@ extension ProductViewController: UITableViewDelegate,UITableViewDataSource
     }
    
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let product = products![indexPath.row]
-        let sheet = UIAlertController(title: "Delete",
-                                      message: nil,
-                                      preferredStyle: .actionSheet)
-        sheet.addAction(UIAlertAction(title:"Cancel",
-                                      style:.cancel,
-                                      handler:nil))
-        sheet.addAction(UIAlertAction(title:"Delete",
-                                      style:.destructive,
-                                      handler:{ [weak self] _ in
-                                        self!.manager.deleteProduct(id:product.id)
-                                      }))
-    }
+    
     
     
     
